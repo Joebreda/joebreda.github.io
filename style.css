@@ -17,12 +17,14 @@ canvas {
   background-color: #EAF5EF;
   background-color: #EFFEFF;
   position: absolute;
-  width: 50%;
-  display: block;
-  left: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
   margin: 0px auto;
-  margin-top: 20%;
+  /*margin-top: 20%;*/
   padding: 30px;
+  display: block;
   /*border-style: double;*/
   border-width: 5px;
   border-color: #000000;
