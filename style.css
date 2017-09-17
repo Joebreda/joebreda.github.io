@@ -30,6 +30,23 @@ canvas {
   border-color: #000000;
 }
 
+.centerbox2 {
+  background-color: #EAF5EF;
+  background-color: #EFFEFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  margin: 0px auto;
+  /*margin-top: 20%;*/
+  padding: 30px;
+  display: block;
+  /*border-style: double;*/
+  border-width: 5px;
+  border-color: #000000;
+}
+
 .icons {
 	height: 25px;
 	width: 25px;
@@ -52,6 +69,12 @@ p {
 	font-weight: 700;
 	font-size: 24px;
 	letter-spacing: 4px
+}
+
+.bodytext {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 2px;
 }
 
 a:link {
