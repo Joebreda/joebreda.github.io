@@ -85,6 +85,9 @@ p {
   padding: 30px;
   display: block;
 }
+#resumeAndAbout {
+  display: inline;
+}
 
 
 /* ---- particles.js container ---- */
