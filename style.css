@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #17182f;
+  background-color: black;
   font-family: "Raleway", sans-serif;
 }
 
@@ -70,6 +71,11 @@ p {
 	font-size: 12px;
 	letter-spacing: 1px;
 }
+li {
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
 .linktext {
   color: #000;
   text-align: center;
@@ -113,5 +119,6 @@ p {
 
 hr {
   width: 100%;
-  color: rgb(0, 0, 0);
+  color: black;
+  border-style: double;
 }
