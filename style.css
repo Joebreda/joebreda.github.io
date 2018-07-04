@@ -63,7 +63,9 @@ p {
 	letter-spacing: 1px;
 }
 .linktext {
-	color: #000;
+  color: #000;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 .bodytext {
   font-weight: 400;
