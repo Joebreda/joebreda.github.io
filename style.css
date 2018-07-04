@@ -98,3 +98,8 @@ p {
   height: 100%;
   z-index: -1;
 }
+
+hr {
+  width: 100%;
+  color: rgb(0, 0, 0);
+}
