@@ -7,22 +7,32 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-/*.aboutbody { */
-  /* background: #FF90CE; /* pale Pink */
-  /* background: -webkit-linear-gradient(#FF90CE, #4A25C2);
-  background: -o-linear-gradient(#FF90CE, #4A25C2);
-  background: -moz-linear-gradient(#FF90CE, #4A25C2);
-  background: linear-gradient(#FF90CE, #4A25C2);
-  /* #4A25C2 /* purple */
-  /* #4AFFC2 /* Cyan green */
-  /* #FF3AC2 /* HotPink */
-/*} */
-
 canvas {
   display: block;
   vertical-align: bottom;
   z-index: -1;
 }
+
+
+a:link{
+	color: black;
+}
+a:hover{
+	color: black;
+}
+a:visited{
+	color: black;
+}
+a:active{
+	color: black;
+}
+.link{
+	color: black;
+}
+#links {
+  text-align: center
+}
+
 
 .centerbox {
   background-color: #EAF5EF;
@@ -94,14 +104,6 @@ li {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 2px;
-}
-
-a:link {
-	text-decoration: none;
-}
-
-a:visited {
-	text-decoration: none;
 }
 
 
