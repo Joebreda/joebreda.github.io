@@ -8,7 +8,6 @@ body {
 }
 
 .topbar {
-  text-align: left;
   color: white;
   font-family: "Raleway", sans-serif;
 }
@@ -44,7 +43,9 @@ a:active{
 	color: black;
 }
 .links {
-  text-align: center
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 #barrier {
   margin-right: 10px;
