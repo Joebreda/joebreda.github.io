@@ -75,6 +75,7 @@ p {
 .centerbox {
   background-color: #EAF5EF;
   background-color: #EFFEFF;
+  background-image: url("pictures/fadedBackground.JPG");
   position: absolute;
   top: 50%;
   left: 50%;
