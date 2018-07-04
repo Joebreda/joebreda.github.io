@@ -7,6 +7,12 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+.topbar {
+  text-align: left;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+
 canvas {
   display: block;
   vertical-align: bottom;
