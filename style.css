@@ -13,6 +13,10 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+div {
+  display: block;
+}
+
 canvas {
   display: block;
   vertical-align: bottom;
@@ -65,8 +69,6 @@ p {
   font-size: 12px;
   letter-spacing: 1px;
 }
-
-
 .centerbox {
   background-color: #EAF5EF;
   background-color: #EFFEFF;
@@ -83,6 +85,7 @@ p {
   border-width: 5px;
   border-color: #000000;
 }
+
 
 /* ---- particles.js container ---- */
 
