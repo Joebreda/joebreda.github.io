@@ -47,6 +47,25 @@ a:active{
   margin-left: 10px;
 }
 
+/* general text */
+
+p {
+  z-index: 2;
+  color: white;
+	text-align: center;
+	font-weight: 400;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+.linktext {
+	color: #000;
+}
+.bodytext {
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
 
 .centerbox {
   background-color: #EAF5EF;
@@ -64,51 +83,6 @@ a:active{
   border-width: 5px;
   border-color: #000000;
 }
-
-.centerbox2 {
-  background-color: #EAF5EF;
-  background-color: #EFFEFF;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  margin: 0px auto;
-  /*margin-top: 20%;*/
-  padding: 30px;
-  display: block;
-  /*border-style: double;*/
-  border-width: 5px;
-  border-color: #000000;
-}
-
-.linktext {
-	color: #000;
-}
-
-p {
-	z-index: 2;
-	color: #F500B9;
-	text-align: center;
-	font-weight: 700;
-	font-size: 24px;
-	letter-spacing: 4px;
-}
-
-.bodytext {
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-li {
-  z-index: 2;
-  color: #F500B9;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 2px;
-}
-
 
 /* ---- particles.js container ---- */
 
