@@ -7,7 +7,7 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-/* .aboutbody {
+/*.aboutbody { */
   /* background: #FF90CE; /* pale Pink */
   /* background: -webkit-linear-gradient(#FF90CE, #4A25C2);
   background: -o-linear-gradient(#FF90CE, #4A25C2);
@@ -16,7 +16,7 @@ body {
   /* #4A25C2 /* purple */
   /* #4AFFC2 /* Cyan green */
   /* #FF3AC2 /* HotPink */
-}
+/*} */
 
 canvas {
   display: block;
