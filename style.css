@@ -94,22 +94,22 @@ a:active{
 }
 
 p {
-	z-index: 2
+	z-index: 2;
 	color: #F500B9;
 	text-align: center;
 	font-weight: 700;
 	font-size: 24px;
-	letter-spacing: 4px
+	letter-spacing: 4px;
 }
 
 .bodytext {
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 li {
-  z-index: 2
+  z-index: 2;
   color: #F500B9;
   font-weight: 500;
   font-size: 16px;
