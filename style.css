@@ -19,7 +19,7 @@ canvas {
   z-index: -1;
 }
 
-
+/* favicons and barrier buffers between */
 a:link{
   color: black;
   text-decoration: none;
@@ -41,6 +41,10 @@ a:active{
 }
 .links {
   text-align: center
+}
+#barrier {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 
@@ -76,17 +80,6 @@ a:active{
   /*border-style: double;*/
   border-width: 5px;
   border-color: #000000;
-}
-
-.icons {
-	height: 25px;
-	width: 25px;
-	float: left;
-}
-
-.icons img {
-	width: 100%;
-	height: auto;
 }
 
 .linktext {
