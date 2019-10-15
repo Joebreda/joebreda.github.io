@@ -28,30 +28,58 @@ canvas {
 }
 
 /* favicons and barrier buffers between */
+a {
+  color: rgb(201, 159, 248);
+}
+a:visited{
+  color: rgb(201, 159, 248);
+  text-decoration: none;
+}
 a:link{
-  color: black;
+  color: rgb(201, 159, 248);
   text-decoration: none;
 }
 a:hover{
-  color: grey;
-  text-decoration: none;
-}
-a:visited{
-  color: black;
+  color: darkturquoise;
   text-decoration: none;
 }
 a:active{
-  color: black;
+  color: rgb(201, 159, 248);
   text-decoration: none;
 }
+/*
 .link{
 	color: black;
 }
+*/
+
+.blacklinks:link{
+  color: black;
+}
+.blacklinks:visited{
+  color: black;
+  text-decoration: none;
+}
+.blacklinks:a {
+  color: black;
+}
+.blacklinks:hover{
+  color: darkturquoise;
+  text-decoration: none;
+}
+/*
+.blacklinks:active{
+  color: black;
+  text-decoration: none;
+}
+*/
+
 .links {
   text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
 #barrier {
   margin-right: 10px;
   margin-left: 10px;
@@ -76,12 +104,18 @@ li {
   font-size: 12px;
   letter-spacing: 1px;
 }
+
 .linktext {
   color: #000;
   text-align: center;
   margin-top: .5em;
   margin-bottom: .5em;
 }
+.linktext:hover{
+  color: darkturquoise;
+  text-decoration: none;
+}
+
 .bodytext {
   font-weight: 400;
   font-size: 12px;
