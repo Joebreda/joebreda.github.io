@@ -22,7 +22,7 @@
         <img class="propic" src="pictures/me.JPG" alt="a picture of me">
         <p class="bodytext">
           I am a PhD student in Computer Science & Engineering working with <a href="https://homes.cs.washington.edu/~shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu">Ubicomp Lab</a> at the <a href="https://www.cs.washington.edu">University of Washington</a>. 
-          In my research, I am interested in leveraging ubiquitous computing and computational social science to improve the sustainability and quality of life of urban environments. I refer to this as Computational Urbanism for short.
+          I am interested in applying ubiquitous sensing and computational social science to improve the sustainability and quality of life of urban environments.
         </p>
 
         <hr>
@@ -69,12 +69,23 @@
       </span>
       <span id="barrier"></span>
       <span>
-        <a class="blacklinks" href="mailto:jbreda@umass.edu">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-        </a>
+        <!-- A little function to show my -->
+        <div class="popup" onclick="myFunction()">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <span class="popuptext" id="myPopup">joebreda 'at' cs 'dot' washington 'dot' edu</space></span>
+        </div>
+        
       </span>
     </div>
   </div>
+
+  <script>
+    // When the user clicks on div, open the popup
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+  </script>
   
 </body>
 
