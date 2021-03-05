@@ -1,0 +1,151 @@
+/* ---- reset ---- */
+
+.background-box {
+    background-color: #0000ff;
+    position: relative;
+    
+    
+}
+
+/* -- Fixed centered box to relate all other elements to -- */
+.central-logo {
+    background-color: #0000ff00; /* #0000ff4f;*/
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 300;
+    height: 400px;
+    margin-top: -200px;
+    width: 800px;
+    margin-left: -400px;
+}
+.center-text {
+    color: #FF0000;
+    font-family: 'Della Respira', serif;
+    font-size: 100px;
+}
+.center-text:hover{
+    color: #B2D4CC;
+    text-decoration: none;
+}
+.title-text-wrapper {
+    background-color: #0000ff;
+    width: min-content;
+    height: 50%;
+    margin-top: 320px;
+    margin-left: 50px;
+}
+
+.side-list {
+    margin-left: 70px;
+}
+.side-list-element {
+    color: #ea00ff;
+    font-family: 'Della Respira', serif;
+    font-size: 20px;
+    margin-left: 50px;
+    width: 100%;
+    overflow: visible;
+}
+.side-list-wrapper {
+    background-color: #00e1ff;
+    width: 100px;
+    padding-top: 1em;
+    margin-top: -650px;
+    margin-left: 540px;
+    line-height: 0.4em;
+}
+
+
+.propic {
+    width: 425px !important; /*Keep the aspect ratio of the image*/
+    height: auto !important;
+    display: block;
+    position: fixed;
+    left: calc(50% + 180px);
+    top: calc(50% - 150px);
+    z-index: 101;
+    margin-top: -200px;
+    margin-left: -400px;
+    overflow: visible;
+  }
+
+.digital_art {
+    width: 100% !important; /*Keep the aspect ratio of the image*/
+    max-width: 1200px;
+    height: auto !important;
+    display: block;
+    position: relative;
+    overflow: visible;
+}
+
+.image_table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.corner-logo {
+    width: 20% !important; /*Keep the aspect ratio of the image*/
+    max-width: 100px;
+    height: auto !important;
+    position: fixed;
+    right: 0em; /* gravity to the top right corner */
+    z-index: 1000;
+}
+
+.vertical-menu {
+    position: relative;
+    transform-origin: 100% 0;
+    position: relative;
+    left: -100%;
+    text-align: right;
+    color: #FF0000;
+    background: rgba(0, 0, 0, 0);
+    font-family: 'Della Respira', serif;
+    font-size: 30px;
+}
+.menu-wrapper {
+    position: fixed;
+    transform: rotate(90deg);
+    left: 0px;
+    margin-left: 1em;
+    margin-top: 120px;
+    z-index: 1000;
+}
+
+html { 
+    overflow-y: scroll; 
+    overflow-x:hidden; 
+    
+}
+body {
+    background-color: #E4E4FF;
+    
+}
+div {
+    display: block;
+}
+
+
+
+
+/* LINK TEXT */
+
+a{
+color: rgb(201, 159, 248);
+background-color: #00000000;
+
+}
+a:visited{
+text-decoration: none;
+}
+a:link{
+text-decoration: none;
+}
+a:hover{
+text-decoration: none;
+color: #B2D4CC;
+}
+a:active{
+text-decoration: none;
+}

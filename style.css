@@ -176,7 +176,7 @@ li {
 
 .bodytext {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 .centerbox {
@@ -203,7 +203,6 @@ li {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 #pubs ul {
