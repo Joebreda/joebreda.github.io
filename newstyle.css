@@ -82,6 +82,7 @@
 .image_table {
     margin-left: auto;
     margin-right: auto;
+    padding: 2em;
 }
 
 .corner-logo {
@@ -119,7 +120,8 @@ html {
     
 }
 body {
-    background-color: #E4E4FF;
+    /*background-color: #E4E4FF;*/
+    background-color: #F2ffe4;
     
 }
 div {
