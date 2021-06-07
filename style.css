@@ -150,7 +150,7 @@
 }
 
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1112px) {
+@media only screen and (max-width: 1190px) {
     [class*="column"] {
       width: 100%;
       float:none;
