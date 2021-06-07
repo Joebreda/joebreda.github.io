@@ -5,47 +5,137 @@
 	Joe Breda
   </title> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Joe Breda Official Website. University of Washington, Ubiquitous Computing, Musician, Artist">
   <!-- STYLE SHEET, SHORT CUT ICONS, AND FONTS -->
-  <link rel="stylesheet" type="text/css" href="newstyle.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="shortcut icon" type="image/jpg" href="pictures/favicon.jpg">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400;1,800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<!--
-  <div class="menu-wrapper">
-    <div class="vertical-menu">
-            <a href="#">Research</a>
-            <a href="#">Art</a>
-            <a href="#">Media</a>
-            <a href="#">Bio</a>
+  <!--<img class="propic" src="pictures/me.JPG" alt="a picture of me">-->
+  <!--<header>
+      <img class="corner-logo" src="pictures/favicon_large.png" alt="my logo">
+      <div><h1>Joe Breda</h1></div>
+      <div><p>thing 1</p></div>
+      <div><p>thing 2</p></div>
+      <div><p>thing 3</p></div>
+  </header>
+  -->
+  <div class="left-column">
+    <div class="table">
+        <div class="row" id="row1">
+            <div class="row-left-column">
+                <img class="image" src="pictures/me2.JPG" alt="a picture of me">
+            </div>
+            <div class="row-right-column">
+                <div class="float-text-right">
+                    <div class="text-wrapper">
+                        <h1>About Me</h1>
+                        <p class="about-text">I am a third year PhD student at the <a href="https://www.washington.edu/">University of Washington</a> in the <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
+                        <p class="about-text">I work in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> where I am advised by <a href="https://homes.cs.washington.edu/~shwetak/">Shwetak Patel</a>.</p>
+                        <p class="about-text">I also make music with my guitar and synthesizer as well as digital art using Blender.</p>
+                        <p class="about-text">I got my B.S. in Computer Engineering with a Minor in Computer Science from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
+                            where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
+                        <hr>
+                        <img class="corner-logo" src="pictures/favicon_large.png" alt="my logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="row2">
+            <div class="second-row-right-column">
+                <div class="float-text-right">
+                    <div class="text-wrapper">
+                        <h1> Interests </h1>
+                        <p> I'm broadly interested in leveraging big data, ubiquitous technology, and artificial intelligence for social good.
+                            I'm passionate about my work having a positive impact on environmental sustainability, public health, and the equity and efficiency of the built environment. </p>
+                        <p> To do this, I like to build novel sensing systems on smart devices which can be quickly deployed at scale. </p>
+                        <p> I also like to build systems on top of existing ubiquitous data sources such as remote sensing images, data from open source smart infrastructure, and data from social media.</p>
+                        <p> I am most excited about problems that are grounded in physics, sociology, or behavior science. </p>
+                    </div>
+                </div>
+                <!-- left column simlpy rests inside right column -->
+                <div class="second-row-left-column">
+                    <h1> Research </h1>
+                    <div class="publication-wrapper">
+                        <p class="title">
+                            Intuitive and Ubiquitous Fever Monitoring Using Smartphones and Smartwatches
+                        </p>
+                        <p class="author-list">
+                            <b>Joseph Breda</b>, Shwetak Patel
+                        </p>
+                        <p class="venue"><i>Arxiv'21 [ONGOING]</i></p>
+                    </div>
+                    <div class="publication-wrapper">
+                        <p class="title">
+                            Phone-based ambient temperature sensing using opportunistic crowdsensing and machine learning
+                        </p>
+                        <p class="author-list">
+                            Amee Trivedi, Phuthipong Bovornkeeratiroj, <b>Joseph Breda</b>, Prashant Shenoy, Jay Taneja, David E Irwin
+                        </p>
+                        <p class="venue"><i>Sustainable Computing: Informatics and Systems, 2021</i> <a href=http://rts.cs.umass.edu/papers/pdf/igsc20-mlphonesense.pdf>[PDF]</a></p>
+                    </div>
+                    <div class="publication-wrapper">
+                        <p class="title">
+                            Hanging Gardens of Babylon: Reframing Urban Agriculture as an Opportunity for Social Engagement
+                        </p>
+                        <p class="author-list">
+                            <b>Joseph Breda</b>, Esther Jang, Kurtis Heimerl, Shwetak Patel
+                        </p>
+                        <p class="venue"><i>Self-Sustainable CHI'20</i> <a href=https://kurti.sh/pubs/babylon_breda_chi2020.pdf>[PDF]</a> </p>
+                    </div>
+                    <div class="publication-wrapper">
+                        <p class="title">
+                            Hot or Not: Leveraging Mobile Devices for Ubiquitous Temperature Sensing
+                        </p>
+                        <p class="author-list">
+                            <b>Joseph Breda</b>, Amee Trivedi, Chulabhaya Wijesundara, Phuthipong Bovornkeeratiroj, David E Irwin, Prashant Shenoy, Jay Taneja
+                        </p>
+                        <p class="venue"><i>BuildSys'19</i> <a href=publications/hotOrNot.pdf>[PDF]</a></p>
+                    </div>
+                    <div class="publication-wrapper">
+                        <p class="title">
+                            Staring at the Sun: A Physical Black-box Solar Performance Model 
+                        </p>
+                        <p class="author-list">
+                            Dong Chen, <b>Joseph Breda</b>, David Irwin
+                        </p>
+                        <p class="venue"><i>BuildSys'18</i> <a href=https://dl.acm.org/doi/pdf/10.1145/3276774.3276782>[PDF]</a></p>
+                    </div>
+                    <div class="publication-wrapper">
+                        <p class="title">
+                            Fancy That: Measuring Electricity Grid Voltage Using a Phone and a Fan
+                        </p>
+                        <p class="author-list">
+                            <b>Joseph Breda</b>, Jay Taneja
+                        </p>
+                        <p class="venue"><i>COMPASS'18</i> <a href=publications/fancyThat.pdf>[PDF]</a></p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="row" id="row3">
+            <h1>Digital Art</h1>
+            <div class="art-gallery">
+                <div class="art-gallery-column">
+                    <img src="digital_art/clam.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                    <img src="digital_art/kendama.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                    <img src="digital_art/pile.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                    <img src="digital_art/shell.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                    <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                </div>
+            </div>
+        </div>
     </div>
   </div>
--->
-  <img class="propic" src="pictures/me.JPG" alt="a picture of me">
 
-  <img class="corner-logo" src="pictures/favicon_large.png" alt="my logo">
 
-  <div class="central-logo">
-      <div class="title-text-wrapper">
-        <a href="index.html" class="center-text"><p>Joe Breda</p></a>
-      </div>
-
-      <div class="side-list-wrapper">
-        <div class="side-list">
-                <a href="research.html" class="side-list-element"><p>Research</p></a>
-                <a href="digital_art.html" class="side-list-element"><p>Digital_Art</p></a>
-                <a href="photography.html" class="side-list-element"><p>Photography</p></a>
-                <a href="music.html" class="side-list-element"><p>Music</p></a>
-                <a href="about.html" class="side-list-element"><p>Biography</p></a>
-                <a href="resume.html" class="side-list-element"><p>Curriculum_Vitæ</p></a>
-        </div>
-      </div>
-  </div>
-  
 
 </body>
 </html>

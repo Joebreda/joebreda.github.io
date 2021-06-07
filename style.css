@@ -1,233 +1,307 @@
-/* ---- reset ---- */
-
-/* Popup container - can be anything you want */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.corner-logo {
+    width: 10% !important; /*Keep the aspect ratio of the image*/
+    max-width: 100px;
+    height: auto !important;
+    left: 0em; /* gravity to the top right corner */
+    z-index: 1000;
+}
+/* This is the upper-most structure and is how I am separating the sections. */
+.table {
+    display: table;
+    width: 100%;
+}
+/* Each new section is a row. */
+.row {
+    display: table-row;
+    width: 100%;
+    height: 100%; /* forces the section to take up a specific amount of space */
+    text-align: center;
+    position: relative;
+}
+/* Left half of first section */
+.row-left-column {
+    background-color: black; /* Janky fix because image was missing about 4 pixels along the bottom and bottom of image is black */
+    float:left; 
+    display: block;
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    overflow: hidden;
+}
+/* Image contained in left half of first section. */
+.row-left-column .image {
+    width: 100% !important; /*Keep the aspect ratio of the image*/
+    object-fit: cover;
+    display: flex /* For some strange reason, if I do not include this line, there are 4 pixels between this image and the parents (reguardless of aspect ratio)*/
+}
+/* Right half of first section. */
+.row-right-column {
+    padding-top: 100px; /* gives space between task bar and text */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+/* Div that forces text in right half of first section to float right. */
+.float-text-right { /* need internal div wrapper to correctly split screen along with left column */
+    width:50%;
+    float: right;
+}
+/* Wrapper of that text that allows it to center within the right half. */
+.text-wrapper{ 
+    margin:50px;
+    position: relative;
+    top: 50%;
+}
+/* Text contained in right half of first section. */
+.row-right-column .about-text {
+    margin: 1px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 2px;
+}
+/* Header of first section. */
+.row-right-column h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 2px;
+}
+/* Line break in first section. */
+.row-right-column hr {
+    border: 1px solid #e62727
+}
+/* Right half of second section is actually wrapping left half. */
+.second-row-right-column {
+    float:right; 
+    width: 100%;
+    background-color: #facaca;
+    height: 100%;
+}
+.second-row-right-column .text-wrapper{ 
+    margin:0px;
+    top: 0%;
+}
+.second-row-right-column .text-wrapper h1 { 
+    text-align: right;
+    margin: 0;
+    padding-top:10px; /* these are needed to match the pane to the left. */
+    padding-right:20px;
+    letter-spacing: 2px;
+    top: 0%;
+}
+.second-row-right-column .text-wrapper p { 
+    text-align: right;
+    margin-top: 10px; /* these are needed to match the pane to the left. */
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+/* Left half of second section is nested in right half but with half width. */
+.second-row-left-column {
+    background-color: #2e2e2e;
+    padding-top: 10px; /* gives space between task bar and text */
+    padding-bottom: 10px;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+/* Div wrapper for publication title, author list, venue. */
+.row .publication-wrapper {
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+/* Title of publication. */
+.row .publication-wrapper .title {
+    color: white;
+    margin: 0px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+/* Author List of publication. */
+.row .publication-wrapper .author-list {
+    color:grey;
+    margin: 0px;
+    letter-spacing: 2px;
+}
+/* My name bolded in author list. */
+.row .publication-wrapper .author-list b {
+    color:#00eeff;
+    margin: 0px;
+    letter-spacing: 2px;
+}
+/* Vanue of publication. */
+.row .publication-wrapper .venue {
+    color:grey;
+    margin: 0px;
+    letter-spacing: 2px;
+}
+/* Left half of second section title. */
+.second-row-left-column h1 {
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: left;
+    padding-left: 20px;
+    margin: 0px;
+    letter-spacing: 2px;
 }
 
-/* The actual popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: rgb(38, 71, 90);
-  color: rgb(251, 255, 211);
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
+/* responsive column on phones works for any class ending in column */
+@media only screen and (max-width: 1080px) {
+    [class*="column"] {
+      width: 100%;
+      float:none;
+      display: block;
+    }
+    .float-text-right {
+        width: 100%;
+        float:none; 
+    }
+    .row-left-column {
+        background-color: #F2ffe4;
+    }
+    .row-left-column .image {
+        width: 50% !important; 
+        height: auto;
+        display: flex;
+        text-align: center;
+        margin:auto; /* center the image once window is too small */
+    }
+    p {
+        text-align: left;
+    }
+    .text-wrapper{ 
+        margin:10px;
+        position: relative;
+        top: 50%;
+    }
+    .row-right-column {
+        padding-top: 5px;
+    }
+    .row .publication-wrapper {
+        margin: 10px;
+    }
+    .second-row-left-column h1 {
+        text-align: center;
+        padding-left: 0px;
+    }
+  }
+/* Third section. */
+.art-gallery {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 4px;
+    padding-bottom: 10px;
+}
+/* Background color of third section. */
+#row3 {
+    background-color: #03fcb1;
+
+}
+/* third section title. */
+.art-gallery h1 {
+    display: block;
+    text-align: right;
+}
+/* Images contained in third section. */
+.art-gallery-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 30%;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 920px) {
+    .art-gallery-column {
+      flex: 100%;
+    }
+  }
+
+header {
+    display: flex;
+    background-color: #c5d0e8;
+    flex-direction: row;
+    vertical-align: middle;
+    height: 100px;
+    justify-content: left;
+    align-items: center;
+}
+header div h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    letter-spacing: 5px;
+}
+header div p {
+    font-family: 'Nunito Sans', sans-serif;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: 3px;
+    vertical-align: middle;
+    display: inline-block;
 }
 
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  font-family: "Raleway", sans-serif;
-	font-size: 10px;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+html { 
+    /*overflow-y: scroll; 
+    overflow-x:hidden; */
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 0.5s;
-  animation: fadeIn 0.5s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #17182f;
-  background-color: black;
-  font-family: "Raleway", sans-serif;
+    /*background-color: #E4E4FF;*/
+    background-color: #F2ffe4;
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-
-.topbar {
-  background-color: white;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-	font-size: 16px;
-  letter-spacing: 0px;
-  padding: .5em;
-}
-
 div {
-  display: block;
+    display: block;
 }
-
-canvas {
-  display: block;
-  z-index: -1;
-}
-
-/* favicons and barrier buffers between */
-a {
-  color: rgb(201, 159, 248);
-}
-a:visited{
-  color: rgb(201, 159, 248);
-  text-decoration: none;
-}
-a:link{
-  color: rgb(201, 159, 248);
-  text-decoration: none;
-}
-a:hover{
-  color: darkturquoise;
-  text-decoration: none;
-}
-a:active{
-  color: rgb(201, 159, 248);
-  text-decoration: none;
-}
-/*
-.link{
-	color: black;
-}
-*/
-
-.blacklinks:link{
-  color: black;
-}
-.blacklinks:visited{
-  color: black;
-  text-decoration: none;
-}
-.blacklinks:a {
-  color: black;
-}
-.blacklinks:hover{
-  color: darkturquoise;
-  text-decoration: none;
-}
-/*
-.blacklinks:active{
-  color: black;
-  text-decoration: none;
-}
-*/
-
-.links {
-  text-align: center;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-#barrier {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-#topbarrier {
-  margin-right: 2px;
-  margin-left: 2px;
-}
-
-/* general text */
 
 p {
-  z-index: 2;
-  color: black;
-	text-align: center;
-	font-weight: 400;
-	font-size: 12px;
-	letter-spacing: 1px;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 0px;
 }
-li {
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-.linktext {
-  color: #000;
-  text-align: center;
-  margin-top: .5em;
-  margin-bottom: .5em;
-}
-.linktext:hover{
-  color: darkturquoise;
-  text-decoration: none;
-}
-
-.bodytext {
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-.centerbox {
-  background-color: #EAF5EF;
-  background-color: #EFFEFF;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 25%;
-  margin: 0px auto;
-  /*margin-top: 20%;*/
-  padding: 30px;
-  display: block;
-}
-
-.centerbox#pubs {
-  width: 50%;
-}
-
-.propic {
-  width: auto !important; /*Keep the aspect ratio of the image*/
-  height: 140px !important;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#pubs ul {
-  padding: 10;
-}
-
-#inline {
-  display: inline;
-}
-#inlinelinks {
-  text-align: center;
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 3em;
 }
 
 
-/* ---- particles.js container ---- */
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+
+/* LINK TEXT */
+
+a{
+color: rgb(201, 159, 248);
+background-color: #00000000;
+
 }
-
-hr {
-  width: 100%;
-  color: black;
-  border-style: double;
+a:visited{
+text-decoration: none;
+}
+a:link{
+text-decoration: none;
+}
+a:hover{
+text-decoration: none;
+color: #B2D4CC;
+}
+a:active{
+text-decoration: none;
 }
