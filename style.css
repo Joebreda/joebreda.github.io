@@ -169,6 +169,7 @@
         display: flex;
         text-align: center;
         margin:auto; /* center the image once window is too small */
+        margin-top: 30px;
     }
     p {
         text-align: left;
