@@ -217,6 +217,9 @@
     background: linear-gradient(180deg, #03fcb1 0%, rgba(0,243,255,1) 100%);
 
 }
+#row3 h1 {
+    color: rgb(149, 0, 255);
+}
 
 /* Background color of 4th section. */
 #row4 {
@@ -226,7 +229,7 @@
 
 }
 #row4 h1 {
-    color: white;
+    color: rgb(255, 0, 0);
 }
 
 /* Images contained in 4th section. */
