@@ -99,7 +99,7 @@
 }
 /* Left half of second section is nested in right half but with half width. */
 .second-row-left-column {
-    background-color: #2e2e2e;
+    background-color:  #2e2e2e; /*#2e2e2e*/;
     padding-top: 10px; /* gives space between task bar and text */
     padding-bottom: 10px;
     width: 50%;
@@ -192,6 +192,13 @@
         text-align: center;
         padding-left: 0px;
     }
+    /* Move right justified text to left when in mobile. */
+    .second-row-right-column .text-wrapper h1 { 
+        text-align: left;
+    }
+    .second-row-right-column .text-wrapper p { 
+        text-align: left;
+    }
   }
 /* Third section. */
 .art-gallery {
@@ -201,13 +208,46 @@
     flex-wrap: wrap;
     flex-direction: row;
     padding: 0 4px;
-    padding-bottom: 10px;
+    padding-bottom: 100px;
 }
 /* Background color of third section. */
 #row3 {
-    background-color: #03fcb1;
+    /* background-color: #03fcb1; */
+    background: rgb(0,255,23);
+    background: linear-gradient(180deg, #03fcb1 0%, rgba(0,243,255,1) 100%);
 
 }
+
+/* Background color of 4th section. */
+#row4 {
+    /* background-color: #03fcb1; */
+    background: rgb(61,0,255);
+    background: linear-gradient(180deg, rgba(61,0,255,1) 0%, rgba(255,0,91,1) 100%);
+
+}
+#row4 h1 {
+    color: white;
+}
+
+/* Images contained in 4th section. */
+#row4 .art-gallery-column img {
+    margin-top: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 30%;
+}
+
+/* Background color of 5th section. */
+#row5 {
+    /* background-color: #03fcb1; */
+    background: rgb(255,254,201);
+    background: linear-gradient(180deg, rgba(255,254,201,1) 0%, rgba(236,204,250,1) 100%);
+
+}
+#row5 h1 {
+    color: rgb(38, 0, 255);
+}
+
 /* third section title. */
 .art-gallery h1 {
     display: block;
@@ -215,7 +255,8 @@
 }
 /* Images contained in third section. */
 .art-gallery-column img {
-    margin-top: 8px;
+    margin-top: 12px;
+    margin-left: 12px;
     vertical-align: middle;
     width: 30%;
 }
@@ -264,7 +305,7 @@ html {
 }
 body {
     /*background-color: #E4E4FF;*/
-    background-color: #F2ffe4;
+    background-color: #fcffe4; /*F2ffe4*/
     display: table;
     height: 100%;
     width: 100%;
@@ -292,7 +333,7 @@ h1 {
 /* LINK TEXT */
 
 a{
-color: rgb(201, 159, 248);
+color: rgb(117, 0, 252); /*rgb(201, 159, 248)*/
 background-color: #00000000;
 
 }
@@ -304,7 +345,7 @@ text-decoration: none;
 }
 a:hover{
 text-decoration: none;
-color: #B2D4CC;
+color: #00ffc3; /*#B2D4CC*/
 }
 a:active{
 text-decoration: none;
