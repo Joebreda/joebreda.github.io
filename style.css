@@ -193,9 +193,6 @@
         padding-left: 0px;
     }
     /* Move right justified text to left when in mobile. */
-    .second-row-right-column .text-wrapper h1 { 
-        text-align: left;
-    }
     .second-row-right-column .text-wrapper p { 
         text-align: left;
     }
