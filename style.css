@@ -74,7 +74,7 @@
 .second-row-right-column {
     float:right; 
     width: 100%;
-    background-color: #facaca;
+    background-color: #ffe3d8; /*#facaca;*/
     height: 100%;
 }
 .second-row-right-column .text-wrapper{ 
@@ -187,6 +187,10 @@
     }
     .row .publication-wrapper {
         margin: 10px;
+    }
+    .second-row-right-column .text-wrapper h1 {
+        text-align: center;
+        padding-left: 0px;
     }
     .second-row-left-column h1 {
         text-align: center;
