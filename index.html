@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400;1,800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script>
     const setTheme = (theme, logoPath) => {
         // Set the theme
@@ -24,18 +25,67 @@
         // Update the source of the logo image
         logo.src = logoPath;
     }
+    window.onscroll = function() {
+            const nav = document.querySelector('.navbar');
+            if(window.scrollY > 150) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    function scrollToElement(elementId) {
+        offset = 500
+        const element = document.getElementById(elementId);
+        const rect = element.getBoundingClientRect();
+        const topPosition = rect.top - offset;
+        window.scroll({
+            top: topPosition,
+            behavior: 'smooth'
+        });
+    }
+    function toggleDiv() {
+        const div = document.getElementById('grid-container');
+        if (div.style.display === "none") {
+            div.style.display = "block";
+            div.classList.add('fade-in');
+            setTimeout(function() {
+                div.classList.remove('fade-in');
+            }, 1000); // same duration as your animation
+        } else {
+            div.style.display = "none";
+        }
+    }
   </script>
 </head>
 
 <body>
-    <div class="toggle-container">
-        <button class="theme-btn light" onclick="setTheme('original', 'pictures/favicon_large.png')" title="Light mode">
-        </button>
-        <button class="theme-btn dark" onclick="setTheme('blue', 'pictures/favicon_blue.png')" title="Dark mode">
-        </button>
-    </div>
+    <div class="navbar">
+        <a href="#home" onclick="scrollToElement('home')">Home</a>
+        <a href="#research" onclick="scrollToElement('research')">Research</a>
+        <a href="#art" onclick="scrollToElement('art')">Art</a>
+        
+        <div class="toggle-container">
+            <button class="theme-btn light" onclick="setTheme('original', 'pictures/favicon_large.png')" title="Light mode">
+                <i class="fa-solid fa-eye" style="color: #0400ff;"></i>
+            </button>
+            <button class="theme-btn dark" onclick="setTheme('blue', 'pictures/favicon_blue.png')" title="Dark mode">
+                <i class="fa-solid fa-water" style="color: #0400ff;"></i></i>
+            </button>
+            <button class="theme-btn" onclick="toggleDiv()">
+                <i class="fa-solid fa-record-vinyl" style="color: #0400ff;"></i>
+            </button>
+        </div>
+      </div>
 
-  <div class="left-column">
+      <!-- I think my earliest experience with music production technology was when I found a tumblr post containing a javascript sequencer like this which I played with for hours. This year I decided to remake it with the help of chatGPT as an easter egg in my website in hopes it inspires someone else the same way it inspired me as a kid. -->
+      <div id="grid-container" style="display:none;"><div class="range-container">
+        <div id="grid"></div>
+        <input id="bpm" type="range" min="60" max="600" value="160" class="vertical-slider">
+        <label for="bpm">T</label>
+    </div></div>
+
+
+  <div class="left-column" id="home">
     <div class="table">
         <div class="row" id="row1">
             <div class="row-left-column">
@@ -54,12 +104,12 @@
                             where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
                             <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a></p>
                         <hr>
-                        <img class="corner-logo" id="logo" src="pictures/favicon_large.png" alt="my logo">
+                        <img class="corner-logo" id="logo" src="pictures/favicon_blue.png" alt="my logo">
                     </div>
             </div>
         </div>
         <div class="row" id="row2">
-            <div class="second-row-right-column">
+            <div class="second-row-right-column" id="research">
                     <div class="text-wrapper">
                         <h1> Research Interests </h1>
                         <p> I'm broadly interested in using sensing, ubiqutious technology, and artificial intelligence for social good.
@@ -155,7 +205,7 @@
         </div>
         <div class="row" id="row3">
             <h1>Blender Art</h1>
-            <div class="art-gallery">
+            <div class="art-gallery" id="art">
                 <div class="art-gallery-column">
                     <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
                     <img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
@@ -224,5 +274,6 @@
     </div>
   </div>
 
+  <script src="sequencer.js"></script>
 </body>
 </html>
