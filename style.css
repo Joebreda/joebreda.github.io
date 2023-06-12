@@ -1,3 +1,115 @@
+.theme-btn {
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    }
+    .theme-btn img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    }
+
+/* The first in the order here is the default */
+:root,
+    :root.blue {
+        --const-bg-color: rgb(252, 243, 213);
+        --const-text-color: #0004ff;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-text-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: rgb(165, 191, 222);
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-text-color);
+        --grad3-top-color: var(--const-text-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-bg-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: #00eeff;
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+        }
+    :root.original {
+        /* Background colors in light mode */
+        --bg-color: #fcffe4;
+        --interests-bg-color: #ffe3d8;
+        --headshot-bg-color: #fcffe4;
+        --research-bg-color: #2e2e2e;
+        --grad1-top-color: #03fcb1;
+        --grad1-bottom-color: rgba(0,243,255,1);
+        --grad2-top-color: rgba(61,0,255,1);
+        --grad2-bottom-color: rgba(255,0,91,1);
+        --grad3-top-color: rgba(255,254,201,1);
+        --grad3-bottom-color: rgba(236,204,250,1);
+
+        /* Text colors in light mode */
+        --text-color-primary: #123;
+        --text-color-alternate-primary: #123;
+        --text-color-secondary: white;
+        --text-color-ternary: grey;
+        --text-color-link: rgb(117, 0, 252);
+        --text-color-highlight: #00eeff;
+
+        --research-h1-color: white;
+        --grad1-h1-color: rgb(149, 0, 255);
+        --grad2-h1-color:  rgb(255, 0, 0);
+        --grad3-h1-color: rgb(38, 0, 255);
+
+        --hr-color: #e62727;
+    }
+
+    :root.zawada {
+        /* Background colors in light mode */
+        --bg-color: #0000ff;
+        --interests-bg-color: #cda5ff;
+        --headshot-bg-color: #ffffc6;
+        --research-bg-color: #135f00;
+        --grad1-top-color: #03fcb1;
+        --grad1-bottom-color: rgba(0,243,255,1);
+        --grad2-top-color: rgba(61,0,255,1);
+        --grad2-bottom-color: rgba(255,0,91,1);
+        --grad3-top-color: rgba(255,254,201,1);
+        --grad3-bottom-color: rgba(236,204,250,1);
+    
+        /* Text colors in light mode */
+        --text-color-primary: rgb(251, 255, 0);
+        --text-color-alternate-primary: rgb(251, 255, 0);
+        --text-color-secondary: rgb(255, 166, 0);
+        --text-color-ternary: rgb(251, 255, 0);
+        --text-color-link: rgb(0, 252, 46);
+        --text-color-highlight: #ff0000;
+    
+        --research-h1-color: white;
+        --grad1-h1-color: rgb(149, 0, 255);
+        --grad2-h1-color:  rgb(255, 0, 0);
+        --grad3-h1-color: rgb(38, 0, 255);
+    
+        --hr-color: #e62727;
+    }
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
 .corner-logo {
     width: 10% !important; /*Keep the aspect ratio of the image*/
     max-width: 100px;
@@ -10,6 +122,10 @@
     display: table;
     width: 100%;
 }
+
+.bg-primary {
+    background-color: var(--grad3-bottom-color);
+}
 /* Each new section is a row. */
 .row {
     display: table-row;
@@ -20,7 +136,7 @@
 }
 /* Left half of first section */
 .row-left-column {
-    background-color: black; /* Janky fix because image was missing about 4 pixels along the bottom and bottom of image is black */
+    background-color: var(--interests-bg-color); /* Janky fix because image was missing about 4 pixels along the bottom and bottom of image is black */
     float:left; 
     display: block;
     width: 50%;
@@ -28,24 +144,44 @@
     object-fit: contain;
     overflow: hidden;
 }
+/* Image container wrapper to keep name and image together. */
+.row-left-column .img-container {
+    width: 100% !important; /*Keep the aspect ratio of the image*/
+    object-fit: cover;
+    position: relative; /* required to have name float over image */
+    text-align: center;
+    /* This will place the image in a buffered box so it does not fill the left column.
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: 5px solid var(--bg-color);
+    text-align: center;
+    margin:auto;
+    */
+    display: flex /* For some strange reason, if I do not include this line, there are 4 pixels between this image and the parents (reguardless of aspect ratio)*/
+}
 /* Image contained in left half of first section. */
 .row-left-column .image {
     width: 100% !important; /*Keep the aspect ratio of the image*/
     object-fit: cover;
     display: flex /* For some strange reason, if I do not include this line, there are 4 pixels between this image and the parents (reguardless of aspect ratio)*/
 }
+.row-left-column .my-name {
+    color: #0000ff;
+    position: absolute;
+    top:0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hide my name until I am in mobile view */
+}
 /* Right half of first section. */
 .row-right-column {
     padding-top: 100px; /* gives space between task bar and text */
-    width: 100%;
+    width:50%; /* Places right column to be 50% */
+    float: right; /* and keeps it on the right side */
     height: 100%;
     text-align: center;
 }
-/* Div that forces text in right half of first section to float right. */
-.float-text-right { /* need internal div wrapper to correctly split screen along with left column */
-    width:50%;
-    float: right;
-}
+
 /* Wrapper of that text that allows it to center within the right half. */
 .text-wrapper{ 
     margin:50px;
@@ -68,16 +204,22 @@
 }
 /* Line break in first section. */
 .row-right-column hr {
-    border: 1px solid #e62727
+    border: 1px solid var(--hr-color)
 }
 /* Right half of second section is actually wrapping left half. */
 .second-row-right-column {
     float:right; 
-    width: 100%;
-    background-color: #ffe3d8; /*#facaca;*/
+    width:50%;
+    float: right;
+    background-color: var(--interests-bg-color); /*#facaca;*/
     height: 100%;
 }
+/* shorter side needs to be the same color as the row it is nested in. */ 
+#row2 {
+    background-color: var(--interests-bg-color); /*#facaca;*/
+}
 .second-row-right-column .text-wrapper{ 
+    color: var(--text-color-alternate-primary);
     margin:0px;
     top: 0%;
 }
@@ -99,7 +241,7 @@
 }
 /* Left half of second section is nested in right half but with half width. */
 .second-row-left-column {
-    background-color:  #2e2e2e; /*#2e2e2e*/;
+    background-color:  var(--research-bg-color); /*#2e2e2e*/;
     padding-top: 10px; /* gives space between task bar and text */
     padding-bottom: 10px;
     width: 50%;
@@ -116,32 +258,33 @@
 }
 /* Title of publication. */
 .row .publication-wrapper .title {
-    color: white;
+    color: var(--text-color-secondary);
     margin: 0px;
     margin-top: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    
 }
 /* Author List of publication. */
 .row .publication-wrapper .author-list {
-    color:grey;
+    color: var(--text-color-ternary);
     margin: 0px;
     letter-spacing: 2px;
 }
 /* My name bolded in author list. */
 .row .publication-wrapper .author-list b {
-    color:#00eeff;
+    color: var(--text-color-highlight);
     margin: 0px;
     letter-spacing: 2px;
 }
 /* Vanue of publication. */
 .row .publication-wrapper .venue {
-    color:grey;
+    color: var(--text-color-ternary);
     margin: 0px;
     letter-spacing: 2px;
 }
 /* Left half of second section title. */
 .second-row-left-column h1 {
-    color: white;
+    color: var(--research-h1-color);
     font-family: 'Nunito Sans', sans-serif;
     text-align: left;
     padding-left: 20px;
@@ -150,18 +293,29 @@
 }
 
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1190px) {
+@media only screen and (max-width: 1190px) { /*1237px?*/
     [class*="column"] {
       width: 100%;
       float:none;
       display: block;
     }
-    .float-text-right {
-        width: 100%;
-        float:none; 
+    .row-left-column .my-name {
+        display: none; /* make name visible again */
+        position: absolute;
+        top: 25px;
+        margin: 0;
+        font-size: 80px;
     }
+    
     .row-left-column {
-        background-color: #F2ffe4;
+        padding-top: 10%;
+        background-color: var(--headshot-bg-color);
+    }
+    .row-right-column {
+        padding-bottom: 10px; /* necessary otherwise theres a small buffer of background color? */
+    }
+    .row-right-column hr {
+        border: 1px solid var(--grad3-bottom-color)
     }
     .row-left-column .image {
         width: 50% !important; 
@@ -170,15 +324,19 @@
         text-align: center;
         margin:auto; /* center the image once window is too small */
         margin-top: 30px;
+        margin-bottom: 30px;
+        border: 5px solid var(--interests-bg-color);
     }
     p {
         text-align: left;
+        
     }
     .text-wrapper{ 
-        margin:10px;
+        margin:20px;
         position: relative;
         top: 50%;
     }
+
     .link-bar-wrapper {
         text-align: center;
     }
@@ -186,8 +344,15 @@
         padding-top: 5px;
     }
     .row .publication-wrapper {
-        margin: 10px;
+        margin: 20px;
     }
+    .second-row-left-column {
+        padding-bottom: 10px; /* necessary otherwise theres a small buffer of background color? */
+    }
+    .second-row-right-column {
+        padding-bottom: 10px; /* necessary otherwise theres a small buffer of background color? */
+    }
+    
     .second-row-right-column .text-wrapper h1 {
         text-align: center;
         padding-left: 0px;
@@ -209,28 +374,29 @@
     flex-wrap: wrap;
     flex-direction: row;
     padding: 0 4px;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
+    padding-top: 100px;
 }
 /* Background color of third section. */
 #row3 {
     /* background-color: #03fcb1; */
     background: rgb(0,255,23);
-    background: linear-gradient(180deg, #03fcb1 0%, rgba(0,243,255,1) 100%);
+    background: linear-gradient(180deg, var(--grad1-top-color) 0%, var(--grad1-bottom-color) 100%);
 
 }
 #row3 h1 {
-    color: rgb(149, 0, 255);
+    color: var(--grad1-h1-color);
 }
 
 /* Background color of 4th section. */
 #row4 {
     /* background-color: #03fcb1; */
     background: rgb(61,0,255);
-    background: linear-gradient(180deg, rgba(61,0,255,1) 0%, rgba(255,0,91,1) 100%);
+    background: linear-gradient(180deg, var(--grad2-top-color) 0%, var(--grad2-bottom-color) 100%); /* rgba(61,0,255,1), rgba(255,0,91,1) */ 
 
 }
 #row4 h1 {
-    color: rgb(255, 0, 0);
+    color: var(--grad2-h1-color);
 }
 
 /* Images contained in 4th section. */
@@ -245,11 +411,11 @@
 #row5 {
     /* background-color: #03fcb1; */
     background: rgb(255,254,201);
-    background: linear-gradient(180deg, rgba(255,254,201,1) 0%, rgba(236,204,250,1) 100%);
+    background: linear-gradient(180deg, var(--grad3-top-color) 0%, var(--grad3-bottom-color) 100%);
 
 }
 #row5 h1 {
-    color: rgb(38, 0, 255);
+    color: var(--grad3-h1-color);
 }
 
 /* third section title. */
@@ -309,7 +475,8 @@ html {
 }
 body {
     /*background-color: #E4E4FF;*/
-    background-color: #fcffe4; /*F2ffe4*/
+    color: var(--text-color-primary);
+    background-color: var(--bg-color); /*F2ffe4*/
     display: table;
     height: 100%;
     width: 100%;
@@ -337,8 +504,9 @@ h1 {
 /* LINK TEXT */
 
 a{
-color: rgb(117, 0, 252); /*rgb(201, 159, 248)*/
+color: var(--text-color-link); /*rgb(201, 159, 248)*/
 background-color: #00000000;
+font-weight: bold;
 
 }
 a:visited{
@@ -349,7 +517,7 @@ text-decoration: none;
 }
 a:hover{
 text-decoration: none;
-color: #00ffc3; /*#B2D4CC*/
+color: var(--text-color-highlight) /*#B2D4CC*/
 }
 a:active{
 text-decoration: none;

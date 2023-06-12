@@ -15,131 +15,143 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400;1,800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+  <script>
+    const setTheme = (theme, logoPath) => {
+        // Set the theme
+        document.documentElement.className = theme;
+        // Get the logo image element by id
+        let logo = document.getElementById('logo');
+        // Update the source of the logo image
+        logo.src = logoPath;
+    }
+  </script>
 </head>
 
 <body>
-  <!--<img class="propic" src="pictures/me.JPG" alt="a picture of me">-->
-  <!--<header>
-      <img class="corner-logo" src="pictures/favicon_large.png" alt="my logo">
-      <div><h1>Joe Breda</h1></div>
-      <div><p>thing 1</p></div>
-      <div><p>thing 2</p></div>
-      <div><p>thing 3</p></div>
-  </header>
-  -->
+    <div class="toggle-container">
+        <button class="theme-btn light" onclick="setTheme('original', 'pictures/favicon_large.png')" title="Light mode">
+        </button>
+        <button class="theme-btn dark" onclick="setTheme('blue', 'pictures/favicon_blue.png')" title="Dark mode">
+        </button>
+    </div>
+
   <div class="left-column">
     <div class="table">
         <div class="row" id="row1">
             <div class="row-left-column">
-                <img class="image" src="pictures/me2.JPG" alt="a picture of me">
+                <div class="img-container">
+                    <h1 class="my-name">Joe Breda</h1>
+                    <img class="image" src="pictures/me2.JPG" alt="a picture of me">
+                </div>
+                
             </div>
             <div class="row-right-column">
-                <div class="float-text-right">
                     <div class="text-wrapper">
                         <h1>About Me</h1>
                         <p class="about-text">I am a Fourth year PhD student advised by <a href="https://homes.cs.washington.edu/~shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
                         <p class="about-text"> My work focuses on leveraging ubiqutious technology and artificial intelligence for social good, sustainability, and urbanism. </p>
-                        <p class="about-text">I also make electronic music and digital art.</p>
                         <p class="about-text">I got my B.S. in Computer Engineering with a Minor in Computer Science from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
                             where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
                             <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a></p>
                         <hr>
-                        <img class="corner-logo" src="pictures/favicon_large.png" alt="my logo">
+                        <img class="corner-logo" id="logo" src="pictures/favicon_large.png" alt="my logo">
                     </div>
-                </div>
             </div>
         </div>
         <div class="row" id="row2">
             <div class="second-row-right-column">
-                <div class="float-text-right">
                     <div class="text-wrapper">
-                        <h1> Interests </h1>
-                        <p> I'm broadly interested in using novel sensing systems, ubiqutious technology, and artificial intelligence for social good.
+                        <h1> Research Interests </h1>
+                        <p> I'm broadly interested in using sensing, ubiqutious technology, and artificial intelligence for social good.
                             I am passionate about my work having a positive impact on environmental sustainability, health, and the equity and efficiency of the built environment. </p>
-                        <p> To do this, I like to build and deploy AI powered sensing systems on smartphones, wearables, and embedded systems. </p>
+                        <p> To do this, I like to build and deploy AI powered sensing on smartphones, wearables, and embedded systems. </p>
 
                         <p> I am most excited about computing problems that are grounded in physics, signal processing, or behavior science.</p>
                         <p> I also have experience in visualization, interactions, and qualitative science.</p>
 
+                        <h1> Personal Interests </h1>
+                        <p> I like to make digital art through a number of mediums including computer graphics, illustration software, and electronic music production. </p>
+                        <p> I am particularly interested in procedurally generated art, harsh noise, granular synthesis, and elegant design. </p>
+                        <p> I also like bouldering, biking, and walking around the city with my friends. </p>
                     </div>
-                </div>
-                <!-- left column simlpy rests inside right column -->
-                <div class="second-row-left-column">
-                    <h1> Research </h1>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            FeverPhone: Accessible Core-Body Temperature Sensing for Fever Monitoring Using Commodity Smartphones
-                        </p>
-                        <p class="author-list">
-                            <b>Joseph Breda</b>, Mastafa M. Springston, Alex Mariakakis, Shwetak Patel
-                        </p>
-                        <p class="venue"><i>Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2023</i> <a href=https://doi.org/10.1145/3580850>[PDF]</a></p>
-                    </div>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            Understanding People's Concerns and Attitudes Towards Smart Cities
-                        </p>
-                        <p class="author-list">
-                            Pardis Emami-Naeini, <b>Joseph Breda</b>, Wei Dai, Tadayoshi Kohno, Kim Laine, Shwetak Patel, Franziska Rosener
-                        </p>
-                        <p class="venue"><i>Conference on Human Factors in Computing Systems (CHI), 2023</i> <a href=publications/smartcities-chi.pdf/>[PDF]</a></p>
-                    </div>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            Passively Sensing SARS-CoV-2 RNA in Public Transit Buses
-                        </p>
-                        <p class="author-list">
-                            Jason Hoffman, Matthew Hirano, Nuttada Panpradist, <b>Joseph Breda</b>, Parker Ruth, Yuanyi Xu,, Jonathan Lester, Bichlien H. Nguyen, Luis Ceze, Shwetak Patel
-                        </p>
-                        <p class="venue"><i>Science of the Total Environment, 2022</i> <a href=https://ubicomplab.cs.washington.edu/pdfs/covid_bus.pdf>[PDF]</a></p>
-                    </div>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            Phone-based ambient temperature sensing using opportunistic crowdsensing and machine learning
-                        </p>
-                        <p class="author-list">
-                            Amee Trivedi, Phuthipong Bovornkeeratiroj, <b>Joseph Breda</b>, Prashant Shenoy, Jay Taneja, David E Irwin
-                        </p>
-                        <p class="venue"><i>Sustainable Computing: Informatics and Systems, 2021</i> <a href=http://rts.cs.umass.edu/papers/pdf/igsc20-mlphonesense.pdf>[PDF]</a></p>
-                    </div>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            Hanging Gardens of Babylon: Reframing Urban Agriculture as an Opportunity for Social Engagement
-                        </p>
-                        <p class="author-list">
-                            <b>Joseph Breda</b>, Esther Jang, Kurtis Heimerl, Shwetak Patel
-                        </p>
-                        <p class="venue"><i>Self-Sustainable CHI'20</i> <a href=https://kurti.sh/pubs/babylon_breda_chi2020.pdf>[PDF]</a> </p>
-                    </div>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            Hot or Not: Leveraging Mobile Devices for Ubiquitous Temperature Sensing
-                        </p>
-                        <p class="author-list">
-                            <b>Joseph Breda</b>, Amee Trivedi, Chulabhaya Wijesundara, Phuthipong Bovornkeeratiroj, David E Irwin, Prashant Shenoy, Jay Taneja
-                        </p>
-                        <p class="venue"><i>BuildSys'19</i> <a href=publications/hotOrNot.pdf>[PDF]</a></p>
-                    </div>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            Staring at the Sun: A Physical Black-box Solar Performance Model 
-                        </p>
-                        <p class="author-list">
-                            Dong Chen, <b>Joseph Breda</b>, David Irwin
-                        </p>
-                        <p class="venue"><i>BuildSys'18</i> <a href=https://dl.acm.org/doi/pdf/10.1145/3276774.3276782>[PDF]</a></p>
-                    </div>
-                    <div class="publication-wrapper">
-                        <p class="title">
-                            Fancy That: Measuring Electricity Grid Voltage Using a Phone and a Fan
-                        </p>
-                        <p class="author-list">
-                            <b>Joseph Breda</b>, Jay Taneja
-                        </p>
-                        <p class="venue"><i>COMPASS'18</i> <a href=publications/fancyThat.pdf>[PDF]</a></p>
-                    </div>
-                </div>
+                
             </div> 
+            <!-- left column simlpy rests inside right column -->
+            <div class="second-row-left-column">
+                <h1> Publications </h1>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>FeverPhone: Accessible Core-Body Temperature Sensing for Fever Monitoring Using Commodity Smartphones</b>
+                    </p>
+                    <p class="author-list">
+                        <b>Joseph Breda</b>, Mastafa M. Springston, Alex Mariakakis, Shwetak Patel
+                    </p>
+                    <p class="venue"><i>Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2023</i> <a href=https://doi.org/10.1145/3580850>[PDF]</a></p>
+                </div>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Understanding People's Concerns and Attitudes Towards Smart Cities</b>
+                    </p>
+                    <p class="author-list">
+                        Pardis Emami-Naeini, <b>Joseph Breda</b>, Wei Dai, Tadayoshi Kohno, Kim Laine, Shwetak Patel, Franziska Rosener
+                    </p>
+                    <p class="venue"><i>Conference on Human Factors in Computing Systems (CHI), 2023</i> <a href=publications/smartcities-chi.pdf/>[PDF]</a></p>
+                </div>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Passively Sensing SARS-CoV-2 RNA in Public Transit Buses</b>
+                    </p>
+                    <p class="author-list">
+                        Jason Hoffman, Matthew Hirano, Nuttada Panpradist, <b>Joseph Breda</b>, Parker Ruth, Yuanyi Xu, Jonathan Lester, Bichlien H. Nguyen, Luis Ceze, Shwetak Patel
+                    </p>
+                    <p class="venue"><i>Science of the Total Environment, 2022</i> <a href=https://ubicomplab.cs.washington.edu/pdfs/covid_bus.pdf>[PDF]</a></p>
+                </div>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Phone-based ambient temperature sensing using opportunistic crowdsensing and machine learning</b>
+                    </p>
+                    <p class="author-list">
+                        Amee Trivedi, Phuthipong Bovornkeeratiroj, <b>Joseph Breda</b>, Prashant Shenoy, Jay Taneja, David E Irwin
+                    </p>
+                    <p class="venue"><i>Sustainable Computing: Informatics and Systems, 2021</i> <a href=http://rts.cs.umass.edu/papers/pdf/igsc20-mlphonesense.pdf>[PDF]</a></p>
+                </div>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Hanging Gardens of Babylon: Reframing Urban Agriculture as an Opportunity for Social Engagement</b>
+                    </p>
+                    <p class="author-list">
+                        <b>Joseph Breda</b>, Esther Jang, Kurtis Heimerl, Shwetak Patel
+                    </p>
+                    <p class="venue"><i>Self-Sustainable CHI'20</i> <a href=https://kurti.sh/pubs/babylon_breda_chi2020.pdf>[PDF]</a> </p>
+                </div>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Hot or Not: Leveraging Mobile Devices for Ubiquitous Temperature Sensing</b>
+                    </p>
+                    <p class="author-list">
+                        <b>Joseph Breda</b>, Amee Trivedi, Chulabhaya Wijesundara, Phuthipong Bovornkeeratiroj, David E Irwin, Prashant Shenoy, Jay Taneja
+                    </p>
+                    <p class="venue"><i>BuildSys'19</i> <a href=publications/hotOrNot.pdf>[PDF]</a></p>
+                </div>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Staring at the Sun: A Physical Black-box Solar Performance Model</b>
+                    </p>
+                    <p class="author-list">
+                        Dong Chen, <b>Joseph Breda</b>, David Irwin
+                    </p>
+                    <p class="venue"><i>BuildSys'18</i> <a href=https://dl.acm.org/doi/pdf/10.1145/3276774.3276782>[PDF]</a></p>
+                </div>
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Fancy That: Measuring Electricity Grid Voltage Using a Phone and a Fan</b>
+                    </p>
+                    <p class="author-list">
+                        <b>Joseph Breda</b>, Jay Taneja
+                    </p>
+                    <p class="venue"><i>COMPASS'18</i> <a href=publications/fancyThat.pdf>[PDF]</a></p>
+                </div>
+            </div>
         </div>
         <div class="row" id="row3">
             <h1>Blender Art</h1>
@@ -158,7 +170,6 @@
             </div>
         </div>
         <div class="row" id="row4">
-            <h1>Liquid Chain Posters</h1>
             <div class="art-gallery">
                 <div class="art-gallery-column">
                     <img src="digital_art/liquify_series/fear.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
@@ -171,7 +182,6 @@
             </div>
         </div>
         <div class="row" id="row5">
-            <h1>Chains and Barbs Posters</h1>
             <div class="art-gallery">
                 <div class="art-gallery-column">
                     <img src="digital_art/posters/barbs_and_flowers.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
@@ -184,7 +194,35 @@
     </div>
   </div>
 
-
+  <!-- Credit for this very cool plain CSS effect to whoever designed the OpenAI website as of 2023 -->
+  <div class="mt-spacing-7 pb-spacing-7 bg-inverse" aria-hidden="true">
+    <div style="margin-top: -23px;">
+        <div class="bg-primary" style="margin-top: 0px; height: 23px;"></div>
+        <div class="bg-primary" style="margin-top: 1px; height: 22px;"></div>
+        <div class="bg-primary" style="margin-top: 2px; height: 21px;"></div>
+        <div class="bg-primary" style="margin-top: 3px; height: 20px;"></div>
+        <div class="bg-primary" style="margin-top: 4px; height: 19px;"></div>
+        <div class="bg-primary" style="margin-top: 5px; height: 18px;"></div>
+        <div class="bg-primary" style="margin-top: 6px; height: 17px;"></div>
+        <div class="bg-primary" style="margin-top: 7px; height: 16px;"></div>
+        <div class="bg-primary" style="margin-top: 8px; height: 15px;"></div>
+        <div class="bg-primary" style="margin-top: 9px; height: 14px;"></div>
+        <div class="bg-primary" style="margin-top: 10px; height: 13px;"></div>
+        <div class="bg-primary" style="margin-top: 11px; height: 12px;"></div>
+        <div class="bg-primary" style="margin-top: 12px; height: 11px;"></div>
+        <div class="bg-primary" style="margin-top: 13px; height: 10px;"></div>
+        <div class="bg-primary" style="margin-top: 14px; height: 9px;"></div>
+        <div class="bg-primary" style="margin-top: 15px; height: 8px;"></div>
+        <div class="bg-primary" style="margin-top: 16px; height: 7px;"></div>
+        <div class="bg-primary" style="margin-top: 17px; height: 6px;"></div>
+        <div class="bg-primary" style="margin-top: 18px; height: 5px;"></div>
+        <div class="bg-primary" style="margin-top: 19px; height: 4px;"></div>
+        <div class="bg-primary" style="margin-top: 20px; height: 3px;"></div>
+        <div class="bg-primary" style="margin-top: 21px; height: 2px;"></div>
+        <div class="bg-primary" style="margin-top: 22px; height: 1px;"></div>
+        <div class="bg-primary" style="margin-top: 23px; height: 0px; margin-bottom: 150px;"></div>
+    </div>
+  </div>
 
 </body>
 </html>
