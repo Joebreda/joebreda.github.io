@@ -23,7 +23,7 @@
         --interests-bg-color: var(--const-text-color);
         --headshot-bg-color: var(--const-bg-color);
         --research-bg-color: var(--const-bg-color);
-        --grad1-top-color: rgb(165, 191, 222);
+        --grad1-top-color: var(--const-text-color);/*rgb(165, 191, 222);*/
         --grad1-bottom-color: var(--const-text-color);
         --grad2-top-color: var(--const-text-color);
         --grad2-bottom-color: var(--const-text-color);
@@ -39,9 +39,9 @@
         --text-color-highlight: #00eeff;
 
         --research-h1-color: var(--const-text-color);
-        --grad1-h1-color: var(--const-text-color);
-        --grad2-h1-color: var(--const-text-color);
-        --grad3-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-bg-color);
+        --grad2-h1-color: var(--const-bg-color);
+        --grad3-h1-color: var(--const-bg-color);
 
         --hr-color: var(--const-text-color);
         }
@@ -122,7 +122,7 @@
         display: block;
         color: var(--const-text-color);
         text-align: center;
-        padding: 14px 16px;
+        padding: 25px 16px 25px 16px;  /* Manually centered bottoms in navbar */
         text-decoration: none;
         font-family: 'Nunito Sans', sans-serif;
         letter-spacing: 2px;
@@ -617,4 +617,19 @@ color: var(--text-color-highlight) /*#B2D4CC*/
 }
 a:active{
 text-decoration: none;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.box {
+    flex: 1; /* equally spaced boxes */
+}
+
+.checker-bg-alternate {
+    background-color: var(--research-bg-color); /* replace with your desired color */
+}
+.checker-bg-primary {
+    background-color: var(--interests-bg-color); /* replace with your desired color */
 }

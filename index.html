@@ -55,6 +55,79 @@
             div.style.display = "none";
         }
     }
+    function generateDivs(n) {
+        var container = document.getElementById('checker-container'); // You should replace 'container' with the id of the HTML element where you want to insert the divs.
+        for (var i = 0; i < n; i++) {
+            var div = document.createElement('div');
+            div.className = 'box ' + (i % 2 === 0 ? 'checker-bg-alternate' : 'checker-bg-primary');
+            container.appendChild(div);
+        }
+    }
+    function generateCheckerboard(rows, columns, numAlternate, numPrimary, firstClass) {
+        function oppositeClass(className) {
+            if (className === 'checker-bg-primary') {
+                return 'checker-bg-alternate'
+            } else {
+                return 'checker-bg-primary'
+            }
+        }
+
+        var checkerboard = document.getElementById('checkerboard');
+        // Putting this outside should make the checkerboard alternate if the columns are odd.
+        var currentClass = firstClass;
+        var lastRowFirstClass = null;
+        for (var row = 0; row < rows; row++) {
+
+            var box_multiplier = Math.pow(2, row);
+            var numBoxes = columns * box_multiplier * box_multiplier
+            for (var repeat = 0; repeat < box_multiplier; repeat++) {
+                if (lastRowFirstClass !== null && currentClass === lastRowFirstClass) {
+                    currentClass = oppositeClass(currentClass)
+                }
+                lastRowFirstClass = currentClass;
+                // Create a row.
+                var container = document.createElement('div');
+                container.className = currentClass + " flex-container generated-container";
+                container.style.marginTop = "0px";
+                container.style.height = (window.innerWidth / numBoxes) + "px"; // divide screen width by n
+                checkerboard.appendChild(container);
+                var counter = 0;
+                for (var i = 0; i < numBoxes; i++) {
+                    var div = document.createElement('div');
+                    div.className = 'box ' + currentClass;
+                    container.appendChild(div);
+                    
+                    counter++;
+                    if (currentClass === 'checker-bg-alternate' && counter === numAlternate) {
+                        currentClass = 'checker-bg-primary';
+                        counter = 0;
+                    } else if (currentClass === 'checker-bg-primary' && counter === numPrimary) {
+                        currentClass = 'checker-bg-alternate';
+                        counter = 0;
+                    }
+                }
+                updateDimensions(container, numBoxes); // Initial update of dimensions
+            }
+        }
+        // add event listener for window resize
+        window.addEventListener('resize', function() {
+        var containers = document.getElementsByClassName('generated-container');
+            for (var i = 0; i < containers.length; i++) {
+                var numBoxes = containers[i].children.length;
+                updateDimensions(containers[i], numBoxes);
+            }
+        });
+    }
+
+    function updateDimensions(container, numBoxes) {
+        var dimension = window.innerWidth / numBoxes;
+        container.style.height = dimension + "px";
+        var boxes = container.getElementsByClassName('box');
+        for (var i = 0; i < boxes.length; i++) {
+            boxes[i].style.width = dimension + "px";
+            boxes[i].style.height = dimension + "px";
+        }
+    }
   </script>
 </head>
 
@@ -204,6 +277,18 @@
             </div>
         </div>
         <div class="row" id="row3">
+
+            <div id="checkerboard" class="mt-spacing-7 pb-spacing-7 bg-inverse" aria-hidden="true">
+                <script>
+                    // Tried to make a modular checkerboard that I could use to make a pixilated disolving effect but got bored. 
+                    //generateCheckerboard(5, 4, 1, 1, "checker-bg-primary")  // generate 10 divs on page load
+                    generateCheckerboard(1, 20, 1, 1, "checker-bg-primary")
+                    generateCheckerboard(1, 40, 1, 1, "checker-bg-alternate")
+                    generateCheckerboard(1, 80, 1, 1, "checker-bg-primary")
+                    generateCheckerboard(1, 160, 1, 1, "checker-bg-alternate")
+                </script>
+            </div>
+            
             <h1>Blender Art</h1>
             <div class="art-gallery" id="art">
                 <div class="art-gallery-column">
