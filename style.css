@@ -14,9 +14,106 @@
 
 /* The first in the order here is the default */
 :root,
+    :root.wire_frame {
+        --const-bg-color: rgb(252, 243, 213);
+        --const-text-color: #0004ff;
+        --const-highlight-color: #10fff3;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
     :root.blue {
         --const-bg-color: rgb(252, 243, 213);
         --const-text-color: #0004ff;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-text-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-text-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-text-color);
+        --grad3-top-color: var(--const-text-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-bg-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: #00eeff;
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-bg-color);
+        --grad2-h1-color: var(--const-bg-color);
+        --grad3-h1-color: var(--const-bg-color);
+
+        --hr-color: var(--const-text-color);
+    }
+    :root.urara {
+        --const-bg-color: rgb(247, 210, 255);
+        --const-text-color: #0000ff;
+        --const-secondary-text-color: #ff003c;
+
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-text-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-text-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-text-color);
+        --grad3-top-color: var(--const-text-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-secondary-text-color);
+        --text-color-alternate-primary: var(--const-secondary-text-color);
+        --text-color-secondary: var(--const-secondary-text-color);
+        --text-color-ternary: var(--const-secondary-text-color);
+        --text-color-link: var(--const-secondary-text-color);
+        --text-color-highlight: var(--const-text-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-bg-color);
+        --grad2-h1-color: var(--const-bg-color);
+        --grad3-h1-color: var(--const-bg-color);
+
+        --hr-color: var(--const-text-color);
+    }
+    :root.green {
+        /* green */
+        /*--const-bg-color: rgb(3, 75, 24);*/
+        /*--const-text-color: #ff9900;*/
 
         /* Background colors in Dark mode */
         --bg-color: var(--const-bg-color);
@@ -116,6 +213,27 @@
     .navbar.scrolled {
         background-color: var(--const-bg-color);
     }
+
+    /* Add horizontal lines to the top and bottom of the navbar when it has the scrolled class */
+    .navbar.scrolled::before,
+    .navbar.scrolled::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--text-color-primary); /* Adjust color as needed */
+        z-index: 10; /* Ensure it appears above the navbar background */
+    }
+
+    .navbar.scrolled::before {
+        top: 0;
+    }
+
+    .navbar.scrolled::after {
+        bottom: 0;
+    }
+
 
     .navbar a {
         float: right;
@@ -230,6 +348,33 @@
     text-align: center;
     position: relative;
 }
+
+/* Add a vertical line to .row that splits into two halves */
+.split-row::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: var(--text-color-primary); /* Adjust color as needed 
+    z-index: 10; /* Make sure it appears above other content */
+}
+
+/* Add a horizontal line at the split point of each row */
+.row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--text-color-primary);
+    z-index: 10; /* Make sure it appears above other content */
+}
+
+
+
 /* Left half of first section */
 .row-left-column {
     background-color: var(--interests-bg-color); /* Janky fix because image was missing about 4 pixels along the bottom and bottom of image is black */
@@ -316,8 +461,10 @@
 }
 .second-row-right-column .text-wrapper{ 
     color: var(--text-color-alternate-primary);
+    /*
     margin:0px;
     top: 0%;
+    */
 }
 .second-row-right-column .text-wrapper h1 { 
     text-align: right;
@@ -351,6 +498,10 @@
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+hr {
+    border: 1px solid var(--hr-color);
 }
 /* Title of publication. */
 .row .publication-wrapper .title {
@@ -395,6 +546,10 @@
       float:none;
       display: block;
     }
+    /* Remove all split row modifers when they are compressed in vertical mode. */
+    .split-row::after {
+        display: none;
+    }
     .row-left-column .my-name {
         display: none; /* make name visible again */
         position: absolute;
@@ -421,7 +576,7 @@
         margin:auto; /* center the image once window is too small */
         margin-top: 30px;
         margin-bottom: 30px;
-        border: 5px solid var(--interests-bg-color);
+        border: 5px solid var(--text-color-secondary);
     }
     p {
         text-align: left;
