@@ -128,6 +128,93 @@
             boxes[i].style.height = dimension + "px";
         }
     }
+
+    // Add the hover image functionality 
+    document.addEventListener('DOMContentLoaded', () => {
+        const hoverLinks = document.querySelectorAll('.hover-link'); // Select all links
+        const hoverImage = document.querySelector('.hover-image');
+        const hoverImgElement = document.getElementById('hover-img');
+
+        // Calculate the center of the viewport
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        hoverLinks.forEach(link => {
+            // Add event listener for each link
+            link.addEventListener('mousemove', (event) => {
+            const imageUrl = link.getAttribute('data-image'); // Get the image URL from the link
+
+            if (imageUrl) {
+                hoverImgElement.src = imageUrl; // Set the image source dynamically
+                hoverImage.style.display = 'block'; // Show the image
+
+                const mouseX = event.clientX;
+                const mouseY = event.clientY;
+
+                const imgWidth = hoverImgElement.offsetWidth;
+                const imgHeight = hoverImgElement.offsetHeight;
+
+                // Calculate offset based on mouse position, using 20% of the distance from the center
+                const xOffset = (mouseX - centerX) * 0.2;
+                const yOffset = (mouseY - centerY) * 0.2;
+
+                // Position the image in the center, then shift based on mouse
+                let xPos = centerX - (imgWidth / 2) + xOffset;
+                let yPos = centerY - (imgHeight / 2) + yOffset;
+
+                hoverImage.style.left = xPos + 'px';
+                hoverImage.style.top = yPos + 'px';
+            }
+            });
+
+            // Hide the image when the mouse leaves the link
+            link.addEventListener('mouseleave', () => {
+            hoverImage.style.display = 'none';
+            });
+        });
+    });
+
+    // Center my propic in the double column case where the height does not populate the full row.
+    // This only works one way and the image doesnt grow back to fill the screen.
+    /*
+    document.addEventListener('DOMContentLoaded', function () {
+        const rowLeftColumn = document.getElementById('row1');
+        const img = rowLeftColumn.querySelector('.image');
+
+        function adjustImageMargins() {
+            // Get the height of the row-left-column and the image
+            const parentHeight = rowLeftColumn.offsetHeight;
+            const imageHeight = img.offsetHeight;
+
+            // If the image height is smaller, calculate the margin
+            if (imageHeight < parentHeight) {
+                const margin = (parentHeight - imageHeight) / 2;
+                img.style.marginTop = `${margin}px`;
+                img.style.marginBottom = `${margin}px`;
+            } else {
+                // Reset margins in case the image fills the container height
+                img.style.marginTop = '0';
+                img.style.marginBottom = '0';
+            }
+        }
+
+        // Wait until the image is fully loaded before adjusting margins
+        if (img.complete) {
+            adjustImageMargins();
+        } else {
+            img.onload = adjustImageMargins;
+        }
+
+        // Adjust margins again if the window is resized
+        window.addEventListener('resize', adjustImageMargins);
+    });
+    */
+
+
+
+
+
+
   </script>
 </head>
 
@@ -161,7 +248,6 @@
     </div></div>
 
 
-  <div class="left-column" id="home">
     <div class="table">
         <div class="row split-row" id="row1">
             <div class="row-left-column">
@@ -171,60 +257,94 @@
                 </div>
                 
             </div>
+
+            <div class="column-divider"> </div> 
+
+
             <div class="row-right-column">
                     <div class="text-wrapper">
                         <h1>About Me</h1>
+                        <h2 class="announcement"> I am on the job market this year! </h2>
                         <p class="about-text">I am a final year PhD student advised by <a href="https://homes.cs.washington.edu/~shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
                         <p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>
                         <p class="about-text">I got my B.S. in Computer Engineering with a Minor in Computer Science from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
                             where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
                             <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a></p>
                         <hr>
-                        <img class="corner-logo" id="logo" src="pictures/favicon_blue.png" alt="my logo">
+                        <!--<img class="corner-logo" id="logo" src="pictures/favicon_blue.png" alt="my logo">-->
+                        <div class="news">
+                            <H2> Recent News </H2>
+                            <ul>
+                                <li> FeverPhone won <i class="fas fa-trophy"></i> Distinguished Paper Award at Ubicomp 2024! </li>
+                                <li> Spent the summer of 2024 deploying smart <i class="fa-solid fa-person-biking"></i> bicycle sensors in Seattle. </li>
+                                <li> Thailand Rideshare Study Published in CSCW 2024! <a href="https://dl.acm.org/doi/pdf/10.1145/3653706"><i class="fa-solid fa-book"></i></a> </li>
+                                <li> Traveled to the NIH in DC to conduct a <i class="fa-solid fa-stethoscope"></i> clinical trials, October 2023.</li>
+                                <li> Traveled to Cancun to present FeverPhone at Ubicomp 2023. <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
+                                <li> Traveled to Thailand again to deploy mobile AQI sensors with <i class="fa-solid fa-motorcycle"></i> motorcycle drivers, July 2023. </li>
+                                <li> FeverPhone Published in IMWUT 2023! <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
+                                <li> Traveled to Thailand to conduct qualitative interviews wtih rideshare drivers, August 2022.</li>
+                                <li> Left my Student Researcher Position at Google, August 2022.</li>
+                                <li> Spent Summer 2022 part-time at Google and part-time conducting a <i class="fa-solid fa-stethoscope"></i> clinical trial for FeverPhone at UW Northwest Hospital. </li>
+                            </ul>
+                        </div>
                     </div>
                     
             </div>
         </div>
+
+        <div class="row-divider"> </div>
+
         <div class="row split-row" id="row2">
             <div class="second-row-right-column" id="research">
                     <div class="text-wrapper">
                         <h1> Research Interests </h1>
-                        <hr>
-                        <p> I'm broadly interested in using sensing, ubiqutious technology, and artificial intelligence for social good.
-                            I am passionate about my work having a positive impact on environmental sustainability, health, and the equity and efficiency of the built environment. </p>
-                        <p> To do this, I like to build and deploy AI powered sensing on smartphones, wearables, and embedded systems. </p>
+                        <p> I'm broadly interested in using <b>sensing</b>, <b>ubiqutious technology</b>, and <b>artificial intelligence</b> for social good.
+                            I am passionate about my work having a positive impact on environmental sustainability, health, and equity of built environments and the societies that occupy them.
+                            To do this, I like to build and deploy AI powered sensing on ubiquitous and scalable platforms like smartphones, wearables, and embedded systems. </p>
 
-                        <p> I am most excited about computing problems that are grounded in physics, signal processing, or behavior science.</p>
-                        <p> I also have experience in visualization, interactions, and qualitative science.</p>
+                        <p> Most recently, I have built and deployed a suite of smart bicycle sensors with a local active transport activist group to passively crowdsource a measure of cyclist safety across the road network and I have lead a year long clinical influenza challenge study at the NIH to explore how biomarkers measured from wearables can predict illness.</p>
+                        <hr>
                         
-                        <hr>
+                        
                         <h1> Some Cool Things I've Done During My PhD </h1>
-                        <hr>
-                        <p> I Lead a Flu Challenge study at the NIH, 
-                        traveled to Thailand to conduct a qualitative interview study and air quality sensor deployment, 
-                        developed and Deployed a bunch of bike sensors with local cycling activists to study bicycle safety in Seattle, 
-                        ran a clinical trial at UW Medical Center, 
-                        lead the Allen School Graduate Entrepreneurship Club to connect PhD-founders with current graduate students, 
-                        taught embedded systems a few times, 
-                        did some deep learning with satellite images at Google, and
-                        made some really great friends! </p>
 
+                        <p> During my time as a PhD student I have been fortunate to work on a variety of different applications.
+                            <b> Personal Health Sensing</b>: I have run clinical trials using experimental health sensing technology at multiple hospitals including the NIH. 
+                            <b> Urbanism</b>: I have built and or deployed custom embedded systems for mobile sensing with bicyclist communities in Seattle and Motorcycle Rideshare communities in Bangkok and Chiang Mai.
+                            <b> Qualitative Science</b>: I have conducted multiple interview studies with urban populations in Seattle and Thailand. 
+                            <b> Applied AI</b>: I have explored the use of Satellite imagery for applied computer vision tasks including wildfire prediction at UW and road safety at Google.
+                            <b> Interactions</b>: I have built custom wearables and conducted user studies for AI-enabled touch sensing.
+
+                            I have also participated in a number of community based organizations including co-founding and leading the <b>Allen School Graduate Entrepreneurship Club</b>, 
+                            and helped start and lead the <b>CS4Env cross-department collaborative initiative</b>. I have also helped teach multiple levels of undergraduate and graduate <b>embedded systems</b> courses including embedded capstone. 
+                        </p>
                         <hr>
+                        
+
+                        
                         <h1> Personal Interests </h1>
-                        <hr>
                         <p> I like to make digital art through a number of mediums including computer graphics, illustration software, and electronic music production. </p>
                         <p> Some things I am particilarly fascinated by are ambient music, harsh noise, procedural graphics, and the design of everyday objects. </p>
-                        <p> I also like bouldering, biking, and walking around the city with my friends. </p>
+                        <p> I also like bouldering, biking, and supporting local third-places. </p>
                         <hr>
+
 
                     </div>
                 
-            </div> 
+            </div>
+            
+            <div class="column-divider"> </div> 
+
             <!-- left column simlpy rests inside right column -->
             <div class="second-row-left-column">
                 <div class="text-wrapper">
                 <h1> Publications </h1>
                 <hr>
+
+                <div class="hover-image">
+                    <img src="#" alt="Hover Image" id="hover-img">
+                  </div>
+
                 <div class="publication-wrapper">
                     <p class="title">
                         <b>Exploring and characterizing large language models for embedded system development and debugging</b>
@@ -237,12 +357,13 @@
                 <hr>
                 <div class="publication-wrapper">
                     <p class="title">
-                        <b>"I will just have to keep driving": A Mixed-methods Investigation of Lack of Agency within the Thai Motorcycle Rideshare Driver Community</b>
+                        <a href="#" class="hover-link" data-image="project_images/thai_rideshare.png"><b>"I will just have to keep driving": A Mixed-methods Investigation of Lack of Agency within the Thai Motorcycle Rideshare Driver Community</b></a>
                     </p>
                     <p class="author-list">
                         Nussara Tieanklin*, <b>Joseph Breda*</b>, Tim Althoff, Kurtis Heimerl
                     </p>
                     <p class="venue"><i>Proceedings of the ACM on Human-Computer Interaction (CSCW), 2024</i> <a href=https://dl.acm.org/doi/pdf/10.1145/3653706>[PDF]</a></p>
+                    <p> * Indicates equal contribution </p>
                 </div>
                 <hr>
                 <div class="publication-wrapper">
@@ -257,12 +378,13 @@
                 <hr>
                 <div class="publication-wrapper">
                     <p class="title">
-                        <b>FeverPhone: Accessible Core-Body Temperature Sensing for Fever Monitoring Using Commodity Smartphones</b>
+                        <a href="#" class="hover-link" data-image="project_images/feverphone.png"><b>FeverPhone: Accessible Core-Body Temperature Sensing for Fever Monitoring Using Commodity Smartphones</b></a>
                     </p>
                     <p class="author-list">
                         <b>Joseph Breda</b>, Mastafa M. Springston, Alex Mariakakis, Shwetak Patel
                     </p>
                     <p class="venue"><i>Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2023</i> <a href=https://doi.org/10.1145/3580850>[PDF]</a></p>
+                    <p><i class="fas fa-trophy"></i> Won Distinguished Paper Award at Ubicomp 2024</p>
                 </div>
                 <hr>
                 <div class="publication-wrapper">
@@ -334,11 +456,12 @@
                     </p>
                     <p class="venue"><i>COMPASS'18</i> <a href=publications/fancyThat.pdf>[PDF]</a></p>
                 </div>
-
-                <p> * indicates equal contribution </p>
                 </div>
             </div>
         </div>
+
+        <div class="row-divider"> </div>
+
         <div class="row" id="row3">
               <!-- 
             <div id="checkerboard" class="mt-spacing-7 pb-spacing-7 bg-inverse" aria-hidden="true">
@@ -369,6 +492,9 @@
                 </div>
             </div>
         </div>
+
+        <div class="row-divider"> </div>
+
         <div class="row" id="row4">
             <div class="art-gallery">
                 <div class="art-gallery-column">
@@ -381,6 +507,9 @@
                 </div>
             </div>
         </div>
+
+        <div class="row-divider"> </div>
+
         <div class="row" id="row5">
             <div class="art-gallery">
                 <div class="art-gallery-column">
@@ -392,7 +521,6 @@
         </div>
 
     </div>
-  </div>
 
   <!-- Credit for this very cool plain CSS effect to whoever designed the OpenAI website as of 2023 -->
   <div class="mt-spacing-7 pb-spacing-7 bg-inverse" aria-hidden="true">

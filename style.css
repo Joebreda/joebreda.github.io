@@ -340,16 +340,27 @@
 .bg-primary {
     background-color: var(--grad3-bottom-color);
 }
+
+p {
+    font-weight: 200;
+}
 /* Each new section is a row. */
 .row {
     display: table-row;
     width: 100%;
-    height: 100%; /* forces the section to take up a specific amount of space */
+    height: 100%;
     text-align: center;
     position: relative;
 }
 
-/* Add a vertical line to .row that splits into two halves */
+b {
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+
+
+/* Add a vertical line to .row that splits into two halves 
 .split-row::after {
     content: '';
     position: absolute;
@@ -357,14 +368,26 @@
     bottom: 0;
     left: 50%;
     width: 2px;
-    background-color: var(--text-color-primary); /* Adjust color as needed 
+    background-color: var(--text-color-primary);
+    z-index: 10;
+}
+*/
+
+.column-divider  {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--text-color-primary); /* Adjust color as needed */
     z-index: 10; /* Make sure it appears above other content */
 }
 
-/* Add a horizontal line at the split point of each row */
-.row::before {
+.row-divider {
     content: '';
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -373,16 +396,35 @@
     z-index: 10; /* Make sure it appears above other content */
 }
 
+/* Add a horizontal line at the split point of each row 
+.row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--text-color-primary);
+    z-index: 10; 
+}
+*/
 
+.split-row::after {
+    display: flex;       /* Enable flexbox on the parent */
+    height: auto;
+}
 
 /* Left half of first section */
 .row-left-column {
     background-color: var(--interests-bg-color); /* Janky fix because image was missing about 4 pixels along the bottom and bottom of image is black */
     float:left; 
-    display: block;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
     width: 50%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
+    align-items: center;          /* Vertically center */
     overflow: hidden;
 }
 /* Image container wrapper to keep name and image together. */
@@ -391,6 +433,9 @@
     object-fit: cover;
     position: relative; /* required to have name float over image */
     text-align: center;
+    justify-content: center;      /* Horizontally center */
+    align-items: center;          /* Vertically center */
+    overflow: hidden;             /* Hide overflow if the image is larger */
     /* This will place the image in a buffered box so it does not fill the left column.
     margin-top: 100px;
     margin-bottom: 100px;
@@ -404,6 +449,9 @@
 .row-left-column .image {
     width: 100% !important; /*Keep the aspect ratio of the image*/
     object-fit: cover;
+    display: flex;
+    text-align: center;
+    margin:auto; /* center the image once window is too small */
     display: flex /* For some strange reason, if I do not include this line, there are 4 pixels between this image and the parents (reguardless of aspect ratio)*/
 }
 .row-left-column .my-name {
@@ -421,27 +469,62 @@
     float: right; /* and keeps it on the right side */
     height: 100%;
     text-align: center;
+    display: flex;
 }
 
 /* Wrapper of that text that allows it to center within the right half. */
 .text-wrapper{ 
-    margin:50px;
+    margin-left:50px;
+    margin-right:50px;
+    margin-top:20px;
+    margin-bottom:20px;
     position: relative;
     top: 50%;
 }
+
+.announcement {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    background-color: var(--text-color-primary);
+    color: var(--const-bg-color);
+}
+
+.news {
+    margin: 1px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    font-family: "Nunito Sans", Helvetica, Arial, sans-serif; /*'Nunito Sans', Noto Sans HK*/
+    letter-spacing: 1.3px;
+    font-weight: 200;
+}
+
+.news ul {
+    height: 100px;            /* Set a fixed height for the ul */
+    border: 1px solid var(--hr-color);
+    overflow-y: scroll;       /* Enable vertical scrolling */
+    scrollbar-width: none;    /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+}
+ 
+.news ul::-webkit-scrollbar {
+    display: none;            /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
 /* Text contained in right half of first section. */
 .row-right-column .about-text {
     margin: 1px;
     margin-bottom: 10px;
     text-align: left;
     width: 100%;
-    font-family: 'Nunito Sans', sans-serif;
-    letter-spacing: 2px;
+    font-family: "Nunito Sans", Helvetica, Arial, sans-serif; /*'Nunito Sans', Noto Sans HK*/
+    letter-spacing: 1.3px;
 }
 /* Header of first section. */
 .row-right-column h1 {
     font-family: 'Nunito Sans', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
 }
 /* Line break in first section. */
 .row-right-column hr {
@@ -471,7 +554,7 @@
     margin: 0;
     padding-top:10px; /* these are needed to match the pane to the left. */
     padding-right:20px;
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
     top: 0%;
 }
 .second-row-right-column .text-wrapper p { 
@@ -480,7 +563,7 @@
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
 }
 /* Left half of second section is nested in right half but with half width. */
 .second-row-left-column {
@@ -494,7 +577,7 @@
 /* Div wrapper for publication title, author list, venue. */
 .row .publication-wrapper {
     font-size: 15px;
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
@@ -508,26 +591,29 @@ hr {
     color: var(--text-color-secondary);
     margin: 0px;
     margin-top: 10px;
-    letter-spacing: 1px;
-    
+    letter-spacing: 1px; 
+    font-weight: 400;
 }
 /* Author List of publication. */
 .row .publication-wrapper .author-list {
     color: var(--text-color-ternary);
     margin: 0px;
-    letter-spacing: 2px;
+    letter-spacing: 1.3px;
 }
+
 /* My name bolded in author list. */
 .row .publication-wrapper .author-list b {
-    color: var(--text-color-highlight);
+    color: var(--bg-color);
+    background-color: var(--text-color-ternary);
     margin: 0px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 /* Vanue of publication. */
 .row .publication-wrapper .venue {
     color: var(--text-color-ternary);
     margin: 0px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 /* Left half of second section title. */
 .second-row-left-column h1 {
@@ -536,15 +622,33 @@ hr {
     text-align: left;
     padding-left: 20px;
     margin: 0px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+/* Add hover images to my publications */
+.hover-image {
+    position: absolute;
+    display: none;
+    pointer-events: none; /* This makes sure the image won't interfere with mouse actions */
+    z-index: 1000; /* Ensures the image is above other elements */
+  }
+  
+.hover-image img {
+    width: 400px; /* Set the size of the image */
+    height: auto;
 }
 
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1190px) { /*1237px?*/
+@media only screen and (max-width: 1290px) { /*1237px?*/
     [class*="column"] {
       width: 100%;
       float:none;
       display: block;
+    }
+
+    /* remove the easter egg toggles and squencer in mobile. */
+    .toggle-container {
+        display: none;
     }
     /* Remove all split row modifers when they are compressed in vertical mode. */
     .split-row::after {
@@ -556,6 +660,10 @@ hr {
         top: 25px;
         margin: 0;
         font-size: 80px;
+    }
+
+    .column-divider {
+        display: none;
     }
     
     .row-left-column {
@@ -710,7 +818,7 @@ header div p {
     font-family: 'Nunito Sans', sans-serif;
     padding-left: 5px;
     padding-right: 5px;
-    letter-spacing: 3px;
+    letter-spacing: 1.3px;
     vertical-align: middle;
     display: inline-block;
 }
@@ -757,7 +865,7 @@ h1 {
 a{
 color: var(--text-color-link); /*rgb(201, 159, 248)*/
 background-color: #00000000;
-font-weight: bold;
+font-weight: 600;
 
 }
 a:visited{
