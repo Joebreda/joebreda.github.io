@@ -1,8 +1,27 @@
 // frequencies for the C minor pentatonic scale, bottom to top
-const scale = [65.41, 73.42, 87.31, 98, 116.54, 130.81, 146.83, 174.61, 196, 233.08, 261.63, 293.66, 349.23, 392, 466.16, 523.25];
+const pentatonicScale = [65.41, 73.42, 87.31, 98, 116.54, 130.81, 146.83, 174.61, 196, 233.08, 261.63, 293.66, 349.23, 392, 466.16, 523.25];
+const lydianScale = [65.41, 73.42, 82.41, 98.0, 110.0, 130.81, 146.83, 174.61, 196.0, 220.0, 261.63, 293.66, 329.63, 392.0, 440.0, 523.25];
+
+let scale = pentatonicScale; // Start with the pentatonic scale
 
 // state of the grid
 let gridState = Array(16).fill().map(() => Array(16).fill(false));
+
+
+function sawWave() {
+  oscillator.type = 'sawtooth';
+}
+
+// Function to change the scale
+function changeScale() {
+  if (scale === pentatonicScale) {
+    scale = lydianScale;
+    console.log("Switched to Lydian scale");
+  } else {
+    scale = pentatonicScale;
+    console.log("Switched to Pentatonic scale");
+  }
+}
 
 // setup web audio api
 let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -39,10 +58,10 @@ function sigmoid(z) {
 
 // create a compressor node
 let compressor = audioCtx.createDynamicsCompressor();
-compressor.threshold.value = -50;
+compressor.threshold.value = -80;
 compressor.knee.value = 40;
-compressor.ratio.value = 12;
-compressor.attack.value = 0;
+compressor.ratio.value = 20;
+compressor.attack.value = 0.003;
 compressor.release.value = 0.25;
 
 // connect the compressor to the destination
@@ -52,8 +71,7 @@ compressor.connect(audioCtx.destination);
 let delay = audioCtx.createDelay(2.0);
 delay.delayTime.value = 0.1;
 // create a gain node for delay feedback
-let delayGain = audioCtx.createGain();
-delayGain.gain.value = 0.8; // adjust for the desired amount of feedback
+let delayGain = audioCtx.createGain();delayGain.gain.value = 0.7; // adjust for the desired amount of feedback
 
 // connect the nodes
 delay.connect(delayGain);

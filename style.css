@@ -1,17 +1,3 @@
-.theme-btn {
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    }
-    .theme-btn img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    }
-
 /* The first in the order here is the default */
 :root,
     :root.wire_frame {
@@ -110,35 +96,35 @@
 
         --hr-color: var(--const-text-color);
     }
-    :root.green {
-        /* green */
-        /*--const-bg-color: rgb(3, 75, 24);*/
-        /*--const-text-color: #ff9900;*/
+    :root.forest {
+        --const-bg-color: rgb(0, 67, 7);
+        --const-text-color: #ff5e00;
+        --const-highlight-color: #10ff4c;
 
         /* Background colors in Dark mode */
         --bg-color: var(--const-bg-color);
-        --interests-bg-color: var(--const-text-color);
+        --interests-bg-color: var(--const-bg-color);
         --headshot-bg-color: var(--const-bg-color);
         --research-bg-color: var(--const-bg-color);
-        --grad1-top-color: var(--const-text-color);/*rgb(165, 191, 222);*/
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
         --grad1-bottom-color: var(--const-text-color);
         --grad2-top-color: var(--const-text-color);
-        --grad2-bottom-color: var(--const-text-color);
-        --grad3-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
         --grad3-bottom-color: var(--const-text-color);
         
         /* text colors in dark mode */
         --text-color-primary: var(--const-text-color);
-        --text-color-alternate-primary: var(--const-bg-color);
+        --text-color-alternate-primary: var(--const-text-color);
         --text-color-secondary: var(--const-text-color);
         --text-color-ternary: var(--const-text-color);
         --text-color-link: var(--const-text-color);
-        --text-color-highlight: #00eeff;
+        --text-color-highlight: var(--const-highlight-color);
 
         --research-h1-color: var(--const-text-color);
-        --grad1-h1-color: var(--const-bg-color);
-        --grad2-h1-color: var(--const-bg-color);
-        --grad3-h1-color: var(--const-bg-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
 
         --hr-color: var(--const-text-color);
         }
@@ -199,6 +185,21 @@
     
         --hr-color: #e62727;
     }
+
+    .theme-btn {
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        color: var(--const-text-color);
+        }
+        .theme-btn img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        }
 
     .navbar {
         position: fixed;
@@ -289,6 +290,34 @@
         padding: 2.5px; /* Half of the space to evenly distribute the boxes */
         /*box-shadow: 10px 10px 15px 10px rgb(37 18 211 / 97%); */
       }
+
+      .custom-slider {
+        /* Remove default styling */
+        -webkit-appearance: none;
+        appearance: none;
+        width: 10%; /* Make it the width of its container */
+        height: 1px; /* Horizontal line thickness */
+        background-color: blue; /* Horizontal line color */
+        position: relative;
+      }
+      
+      .custom-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 15px; /* Height of the vertical indicator */
+        width: 1px; /* Width of the vertical indicator */
+        background-color: blue; /* Vertical line color */
+        cursor: pointer;
+        margin-top: 0px; /* Center the line on the horizontal */
+      }
+      .custom-slider::-moz-range-thumb {
+        width: 1px;
+        height: 15px; /* Height of the vertical indicator */
+        background-color: blue;
+        cursor: pointer;
+        margin-top: 0px;
+      }
+      
       
       .gridrow {
         display: flex;
@@ -530,6 +559,11 @@ b {
 .row-right-column hr {
     border: 1px solid var(--hr-color)
 }
+/* Line break in second section. */
+.second-row-right-column hr {
+    border: 1px solid var(--hr-color);
+    margin-top: 25px;
+}
 /* Right half of second section is actually wrapping left half. */
 .second-row-right-column {
     float:right; 
@@ -558,7 +592,7 @@ b {
     top: 0%;
 }
 .second-row-right-column .text-wrapper p { 
-    text-align: right;
+    text-align: justify;
     margin-top: 10px; /* these are needed to match the pane to the left. */
     margin-left: 15px;
     margin-right: 15px;
@@ -780,7 +814,7 @@ hr {
 /* third section title. */
 .art-gallery h1 {
     display: block;
-    text-align: right;
+    text-align:right;
 }
 /* Images contained in third section. */
 .art-gallery-column img {

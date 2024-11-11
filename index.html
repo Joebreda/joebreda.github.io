@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script>
+    
     const setTheme = (theme, logoPath) => {
         // Set the theme
         document.documentElement.className = theme;
@@ -43,7 +44,7 @@
             behavior: 'smooth'
         });
     }
-    function toggleDiv() {
+    function showSequencer() {
         const div = document.getElementById('grid-container');
         if (div.style.display === "none") {
             div.style.display = "block";
@@ -225,17 +226,20 @@
         <a href="#art" onclick="scrollToElement('art')">Art</a>
         
         <div class="toggle-container">
-            <button class="theme-btn light" onclick="setTheme('original', 'pictures/favicon_large.png')" title="Light mode">
-                <i class="fa-solid fa-eye" style="color: #0400ff;"></i>
+            <button class="theme-btn" onclick="setTheme('original', 'pictures/favicon_large.png')" title="Light mode">
+                <i class="fa-solid fa-eye"></i>
             </button>
-            <button class="theme-btn dark" onclick="setTheme('blue', 'pictures/favicon_blue.png')" title="Dark mode">
-                <i class="fa-solid fa-water" style="color: #0400ff;"></i></i>
+            <button class="theme-btn" onclick="setTheme('blue', 'pictures/favicon_blue.png')" title="Dark mode">
+                <i class="fa-solid fa-water"></i></i>
             </button>
-            <button class="theme-btn dark" onclick="setTheme('wire_frame', 'pictures/favicon_blue.png')" title="wire frame mode">
-                <i class="fa-solid fa-globe" style="color: #0400ff;"></i>
+            <button class="theme-btn" onclick="setTheme('wire_frame', 'pictures/favicon_blue.png')" title="wire frame mode">
+                <i class="fa-solid fa-globe"></i>
             </button>
-            <button class="theme-btn" onclick="toggleDiv()">
-                <i class="fa-solid fa-record-vinyl" style="color: #0400ff;"></i>
+            <button class="theme-btn" onclick="setTheme('forest', 'pictures/favicon_blue.png')" title="forest mode">
+                <i class="fa-solid fa-tree"></i>
+            </button>
+            <button class="theme-btn" onclick="showSequencer()">
+                <i class="fa-solid fa-record-vinyl"></i>
             </button>
         </div>
       </div>
@@ -243,8 +247,14 @@
       <!-- I think my earliest experience with music production technology was when I found a tumblr post containing a javascript sequencer like this which I played with for hours. This year I decided to remake it with the help of chatGPT as an easter egg in my website in hopes it inspires someone else the same way it inspired me as a kid. -->
       <div id="grid-container" style="display:none;"><div class="range-container">
         <div id="grid"></div>
-        <input id="bpm" type="range" min="60" max="600" value="160" class="vertical-slider">
-        <label for="bpm">T</label>
+        <div class="sequencer-controls">
+            <i class="fa-solid fa-gauge"></i>
+            <input id="bpm" type="range" min="60" max="600" value="160" class="custom-slider">
+            <button class="theme-btn" onclick="changeScale()" title="Change scale to lydian">
+                <i class="fa-solid fa-o"></i>
+            </button>
+        </div>
+        
     </div></div>
 
 
@@ -265,7 +275,7 @@
                     <div class="text-wrapper">
                         <h1>About Me</h1>
                         <!--<h2 class="announcement"> I am on the job market this year! </h2>-->
-                        <p class="about-text">I am a final year PhD student advised by <a href="https://homes.cs.washington.edu/~shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
+                        <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
                         <p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>
                         <p class="about-text">I got my B.S. in Computer Engineering with a Minor in Computer Science from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
                             where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
@@ -323,9 +333,11 @@
 
                         
                         <h1> Personal Interests </h1>
-                        <p> I like to make digital art through a number of mediums including computer graphics, illustration software, and electronic music production. </p>
-                        <p> Some things I am particilarly fascinated by are ambient music, harsh noise, procedural graphics, and the design of everyday objects. </p>
-                        <p> I also like bouldering, biking, and supporting local third-places. </p>
+                        <p> Outside of my research, I like to make digital art through a variety of mediums including computer graphics, electronic music production software, hardware synthesizers, and photography. 
+                            Some themes I find inspiring across all mediums are ambience, harsh noise, procedural generation, and the design of everyday things.
+                            I also like to boulder, bike, spend time in public shared space. 
+    
+                        </p>
                         <hr>
 
 
