@@ -33,33 +33,66 @@
         --hr-color: var(--const-text-color);
     }
     :root.blue {
-        --const-bg-color: rgb(252, 243, 213);
-        --const-text-color: #0004ff;
+        --const-bg-color:#0004ff;
+        --const-text-color: rgb(252, 243, 213);
+        --const-highlight-color: #f7ff10;
 
         /* Background colors in Dark mode */
         --bg-color: var(--const-bg-color);
-        --interests-bg-color: var(--const-text-color);
+        --interests-bg-color: var(--const-bg-color);
         --headshot-bg-color: var(--const-bg-color);
         --research-bg-color: var(--const-bg-color);
-        --grad1-top-color: var(--const-text-color);/*rgb(165, 191, 222);*/
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
         --grad1-bottom-color: var(--const-text-color);
         --grad2-top-color: var(--const-text-color);
-        --grad2-bottom-color: var(--const-text-color);
-        --grad3-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
         --grad3-bottom-color: var(--const-text-color);
         
         /* text colors in dark mode */
         --text-color-primary: var(--const-text-color);
-        --text-color-alternate-primary: var(--const-bg-color);
+        --text-color-alternate-primary: var(--const-text-color);
         --text-color-secondary: var(--const-text-color);
         --text-color-ternary: var(--const-text-color);
         --text-color-link: var(--const-text-color);
-        --text-color-highlight: #00eeff;
+        --text-color-highlight: var(--const-highlight-color);
 
         --research-h1-color: var(--const-text-color);
-        --grad1-h1-color: var(--const-bg-color);
-        --grad2-h1-color: var(--const-bg-color);
-        --grad3-h1-color: var(--const-bg-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
+    :root.otter {
+        --const-bg-color:#352621;
+        --const-text-color: rgb(222, 179, 252);
+        --const-highlight-color: #ff0000;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
 
         --hr-color: var(--const-text-color);
     }
@@ -266,7 +299,7 @@
    
     /* Music Doodad */
     .active {
-        background-color: blue;
+        background-color: var(--const-text-color);
       }
       #grid-container {
         display:none;
@@ -274,7 +307,7 @@
         top:50%;
         left:50%;
         transform:translate(-50%,-50%);
-        background-color:rgb(252, 245, 203);
+        background-color:var(--const-bg-color);
         padding:20px;
         border-radius:20px;
         z-index:999;
@@ -297,7 +330,7 @@
         appearance: none;
         width: 10%; /* Make it the width of its container */
         height: 1px; /* Horizontal line thickness */
-        background-color: blue; /* Horizontal line color */
+        background-color: var(--const-text-color); /* Horizontal line color */
         position: relative;
       }
       
@@ -306,14 +339,14 @@
         appearance: none;
         height: 15px; /* Height of the vertical indicator */
         width: 1px; /* Width of the vertical indicator */
-        background-color: blue; /* Vertical line color */
+        background-color: var(--const-text-color); /* Vertical line color */
         cursor: pointer;
         margin-top: 0px; /* Center the line on the horizontal */
       }
       .custom-slider::-moz-range-thumb {
         width: 1px;
         height: 15px; /* Height of the vertical indicator */
-        background-color: blue;
+        background-color: var(--const-text-color);
         cursor: pointer;
         margin-top: 0px;
       }
@@ -328,7 +361,7 @@
       
       .gridrow > div {
         flex: 1;
-        border: 4px solid blue;
+        border: 4px solid var(--const-text-color);
         display: inline-block;
         flex-basis: calc(100% / 16);
         box-sizing: border-box;
@@ -338,12 +371,13 @@
       }
       
       .gridrow > div.active {
-        background-color: blue;
+        background-color: var(--const-text-color);
       }
       
       .gridrow > div:hover {
         cursor: pointer;
-        background-color: rgba(0, 51, 255, 0.472);
+        background-color: var(--const-text-color);
+        opacity: 0.47;
       }
 
 .toggle-container {
