@@ -56,6 +56,20 @@
             div.style.display = "none";
         }
     }
+
+    function closeSequencer() {
+        document.getElementById("grid-container").style.display = "none";
+        // Stop the sequencer by clearing the interval
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+        // Disconnect active oscillators to stop audio
+        if (oscillator) {
+            oscillator.stop();
+            oscillator.disconnect();
+        }
+    }
     function generateDivs(n) {
         var container = document.getElementById('checker-container'); // You should replace 'container' with the id of the HTML element where you want to insert the divs.
         for (var i = 0; i < n; i++) {
@@ -249,6 +263,9 @@
 
       <!-- I think my earliest experience with music production technology was when I found a tumblr post containing a javascript sequencer like this which I played with for hours. This year I decided to remake it with the help of chatGPT as an easter egg in my website in hopes it inspires someone else the same way it inspired me as a kid. -->
       <div id="grid-container" style="display:none;"><div class="range-container">
+        <div id="close-container">
+            <i class="fa-regular fa-circle-xmark" onclick="closeSequencer()" title="Close"></i>
+        </div>
         <div id="grid"></div>
         <div class="sequencer-controls">
             <i class="fa-solid fa-gauge"></i>
