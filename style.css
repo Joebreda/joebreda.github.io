@@ -425,7 +425,6 @@ p {
 .row {
     display: table-row;
     width: 100%;
-    height: 100%;
     text-align: center;
     position: relative;
 }
@@ -818,12 +817,78 @@ hr {
     padding-bottom: 120px;
     padding-top: 100px;
 }
+
+/* third section title. */
+.art-gallery h1 {
+    display: block;
+    text-align:right;
+}
+/* Images contained in third section. */
+.art-gallery-column img {
+    margin-top: 12px;
+    margin-left: 12px;
+    vertical-align: middle;
+    width: 30%;
+}
+
+/* smaller images when hoverable version */
+.art-gallery-column a img {
+    margin-top: 12px;
+    margin-left: 12px;
+    vertical-align: middle;
+    width: 10%;
+}
+
+/* Horizontal scroll container */
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden; /* Prevents vertical overflow */
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+    -webkit-overflow-scrolling: touch;
+}
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;            /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+/* Each row should snap to the viewport */
+.horizontal-scroll .row {
+    flex: none;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+.scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+.left-button {
+    left: 10px; /* Position to the left side */
+}
+.right-button {
+    right: 10px; /* Position to the right side */
+}
+/* Hover effect */
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
 /* Background color of third section. */
 #row3 {
-    /* background-color: #03fcb1; */
-    background: rgb(0,255,23);
     background: linear-gradient(180deg, var(--grad1-top-color) 0%, var(--grad1-bottom-color) 100%);
-
 }
 #row3 h1 {
     color: var(--grad1-h1-color);
@@ -834,8 +899,8 @@ hr {
     /* background-color: #03fcb1; */
     background: rgb(61,0,255);
     background: linear-gradient(180deg, var(--grad2-top-color) 0%, var(--grad2-bottom-color) 100%); /* rgba(61,0,255,1), rgba(255,0,91,1) */ 
-
 }
+
 #row4 h1 {
     color: var(--grad2-h1-color);
 }
@@ -859,18 +924,6 @@ hr {
     color: var(--grad3-h1-color);
 }
 
-/* third section title. */
-.art-gallery h1 {
-    display: block;
-    text-align:right;
-}
-/* Images contained in third section. */
-.art-gallery-column img {
-    margin-top: 12px;
-    margin-left: 12px;
-    vertical-align: middle;
-    width: 30%;
-}
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 920px) {
     .art-gallery-column {
