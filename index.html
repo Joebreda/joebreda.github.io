@@ -154,6 +154,12 @@
         const hoverImage = document.querySelector('.hover-image');
         const hoverImgElement = document.getElementById('hover-img');
 
+        // Check if the device supports touch (i.e., a mobile device)
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        // If it's a touch device, disable hover functionality
+        if (isTouchDevice) return;
+
         hoverLinks.forEach(link => {
             // Add event listener for each link
             link.addEventListener('mousemove', (event) => {
@@ -401,8 +407,8 @@
                             This translational research often leads to longitudinal deployment studies, user studies, and qualitative evaluation with end-users. 
                         </p>
                         <p>
-                            More recently, I have been in the research sandbox with AI agents as a new ubiqutious platform to facilitate human-AI collaboration by
-                            developing AI that leverages sensor data as a signal to solicit human feedback automatically.
+                            More recently, I have been in the research sandbox with AI agents as a new ubiqutious platform to enhance human-AI collaboration by
+                            developing AI that leverages sensor data context to solicit human feedback automatically.
                         </p>
                         <p> 
                             Some example applications I am most excited about include disease prevention, promoting sustainable and healthy behavior, context-aware AI, and urbanism. 
