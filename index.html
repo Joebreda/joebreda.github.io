@@ -303,6 +303,15 @@
             <button class="theme-btn" onclick="setTheme('otter', 'pictures/favicon_blue.png')" title="playful mode">
                 <i class="fa-solid fa-otter"></i>
             </button>
+            <button class="theme-btn" onclick="setTheme('sepia', 'pictures/favicon_blue.png')" title="sepia mode">
+                <i class="fa-solid fa-kiwi-bird"></i>
+            </button>
+            <button class="theme-btn" onclick="setTheme('ectoplasm', 'pictures/favicon_blue.png')" title="ectoplasm mode">
+                <i class="fa-solid fa-ghost"></i>
+            </button>
+            <button class="theme-btn" onclick="setTheme('photosynthesis', 'pictures/favicon_blue.png')" title="photosynthesis mode">
+                <i class="fa-solid fa-seedling"></i>
+            </button>
             <button class="theme-btn" onclick="showSequencer()">
                 <i class="fa-solid fa-record-vinyl"></i>
             </button>
@@ -344,21 +353,27 @@
                         <h1>About Me</h1>
                         <!--<h2 class="announcement"> I am on the job market this year! </h2>-->
                         <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
-                        <p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>
-                        <p class="about-text">I got my B.S. in Computer Engineering with a Minor in Computer Science from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
+                        <!--<p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>-->
+                        <p class="about-text"> My work is impact-driven, leveraging ubiqutious technologies as platforms to improve population health and societal well-being. 
+                            I approach this through a mix of human-centric sensing, artificial intelligence, HCI, and qualitative study. More details about about my research interests and experience below. 
+                        </p>
+                        <!--
+                        <p class="about-text">I got my B.S. in Computer Engineering from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
                             where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
+                        -->    
                             <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a></p>
                         <hr>
                         <!--<img class="corner-logo" id="logo" src="pictures/favicon_blue.png" alt="my logo">-->
                         <div class="news">
                             <H2> Recent News </H2>
                             <ul>
-                                <li> Two papers on improving navigation platforms for active transportation accepted to CHI 2025! </li>
+                                <li> Two papers on improving navigation platforms for active transportation <i class="fa-solid fa-person-walking"></i><i class="fa-solid fa-person-biking"></i> accepted to CHI 2025! </li>
                                 <li> FeverPhone won <i class="fas fa-trophy"></i> Distinguished Paper Award at Ubicomp 2024! </li>
                                 <li> Spent the summer of 2024 deploying smart <i class="fa-solid fa-person-biking"></i> bicycle sensors in Seattle. </li>
                                 <li> Thailand Rideshare Study Published in CSCW 2024! <a href="https://dl.acm.org/doi/pdf/10.1145/3653706"><i class="fa-solid fa-book"></i></a> </li>
                                 <li> Traveled to the NIH in DC to conduct a <i class="fa-solid fa-stethoscope"></i> clinical trials, October 2023.</li>
                                 <li> Traveled to Cancun to present FeverPhone at Ubicomp 2023. <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
+                                <li> Traveled to Germany for the 10th Heidelberg Laureate Forum! </li>
                                 <li> Traveled to Thailand again to deploy mobile AQI sensors with <i class="fa-solid fa-motorcycle"></i> motorcycle drivers, July 2023. </li>
                                 <li> FeverPhone Published in IMWUT 2023! <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
                                 <li> Traveled to Thailand to conduct qualitative interviews wtih rideshare drivers, August 2022.</li>
@@ -377,34 +392,56 @@
             <div class="second-row-right-column" id="research">
                     <div class="text-wrapper">
                         <h1> Research Interests </h1>
-                        <p> I'm broadly interested in using <b>sensing</b>, <b>ubiqutious technology</b>, and <b>artificial intelligence</b> for social good.
-                            I am passionate about my work having a positive impact on environmental sustainability, health, and equity of built environments and the societies that occupy them.
-                            To do this, I like to build and deploy AI powered sensing on ubiquitous and scalable platforms like smartphones, wearables, and embedded systems. </p>
+                        <p> 
+                            I'm broadly interested in using <b>ubiqutious computing</b> and <b>artificial intelligence</b> to build <b>human-centric</b> systems that improve <b>societal well-being</b>.
+                            This includes leveraging or repurposing ubiqutious technology platforms like smartphones and wearables for new applications in health and environmental sensing and 
+                            developing AI systems to infer new insights from existing data sources. 
+                        </p>
+                        <p>
+                            This translational research often leads to longitudinal deployment studies, user studies, and qualitative evaluation with end-users. 
+                        </p>
+                        <p>
+                            More recently, I have been in the research sandbox with AI agents as a new ubiqutious platform to facilitate human-AI collaboration by
+                            developing AI that leverages sensor data as a signal to solicit human feedback automatically.
+                        </p>
+                        <p> 
+                            Some example applications I am most excited about include disease prevention, promoting sustainable and healthy behavior, context-aware AI, and urbanism. 
 
-                        <p> Most recently, I have built and deployed a suite of smart bicycle sensors with a local active transport activist group to passively crowdsource a measure of cyclist safety across the road network and I have lead a year long clinical influenza challenge study at the NIH to explore how biomarkers measured from wearables can predict illness.</p>
+                        </p>
                         <hr>
                         
                         
-                        <h1> Some Cool Things I've Done During My PhD </h1>
+                        <h1> Notable Experiences </h1>
 
-                        <p> During my time as a PhD student I have been fortunate to work on a variety of different applications.
-                            <b> Personal Health Sensing</b>: I have run clinical trials using experimental health sensing technology at multiple hospitals including the NIH. 
-                            <b> Urbanism</b>: I have built and or deployed custom embedded systems for mobile sensing with bicyclist communities in Seattle and Motorcycle Rideshare communities in Bangkok and Chiang Mai.
-                            <b> Qualitative Science</b>: I have conducted multiple interview studies with urban populations in Seattle and Thailand. 
-                            <b> Applied AI</b>: I have explored the use of Satellite imagery for applied computer vision tasks including wildfire prediction at UW and road safety at Google.
-                            <b> Interactions</b>: I have built custom wearables and conducted user studies for AI-enabled touch sensing.
-
-                            I have also participated in a number of community based organizations including co-founding and leading the <b>Allen School Graduate Entrepreneurship Club</b>, 
-                            and helped start and lead the <b>CS4Env cross-department collaborative initiative</b>. I have also helped teach multiple levels of undergraduate and graduate <b>embedded systems</b> courses including embedded capstone. 
+                        <p> 
+                            I have collaborated with a variety of stakeholders and instutitions including: the <b>National Institute of Health (NIH)</b>, <b>UW Medicine Emergency Department</b>, and local 
+                            cycling and pedestrian activist organizations to deploy novel personal health and environmental sensing systems. 
                         </p>
+
+                        <p>
+                            Previously, I was a Student Researcher at <b>Google</b> where I worked on geospatial deep learning models for forecasting driver safety to improve Google Maps.
+                        </p>
+                        <p> 
+                            I have also traveled to Bangkok and Chiang Mai Thailand to conduct a qualitative study and follow up mobile sensor deployment to understand the experience of gig-workers in relation to 
+                            severe pollution exposure.
+                        </p>
+
+                        <p>
+                            I also founded and lead the <b>Allen School Graduate Entrepreneurship Club</b>
+                            and helped start the <b>CS4Env cross-department collaborative initiative</b>.
+                        </p>
+
+                        <!--<p>  I also taught mutliple levels of embedded systems and mobile development project courses. </p>-->
+
+                    
                         <hr>
                         
 
                         
                         <h1> Personal Interests </h1>
-                        <p> Outside of my research, I like to make digital art through a variety of mediums including computer graphics, electronic music production software, hardware synthesizers, and photography. 
-                            Some themes I find inspiring across all mediums are ambience, harsh noise, procedural generation, and the design of everyday things.
-                            I also like to boulder, bike, write, and spend time in public shared space. 
+                        <p> Outside of my research, I like to make digital and physical art through a variety of mediums including computer graphics, electronic music production, hardware synthesizers, and photography. 
+                            Some themes I find inspiring across all mediums are abstract ambience, harsh noise, procedural generation, and the design of everyday things.
+                            I also like to boulder, bike, write, and spend time in public space. 
     
                         </p>
                         <hr>

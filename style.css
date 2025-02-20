@@ -96,6 +96,108 @@
 
         --hr-color: var(--const-text-color);
     }
+    :root.sepia { 
+        --const-bg-color:#502c06; 
+        --const-text-color: #e4782b;/*#DEB887;*/
+        --const-highlight-color: #FFE4C4;
+        /*
+        --const-bg-color:#341e06; 
+        --const-text-color: #ff9100;
+        --const-highlight-color: #FFE4C4;
+        */
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
+    :root.ectoplasm {
+        --const-bg-color:#363b37;
+        --const-text-color: #07ffb9;
+        --const-highlight-color: #3ded97;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
+    :root.photosynthesis {
+        --const-bg-color:#264e49;
+        --const-text-color: #6f9b3c;
+        --const-highlight-color: #e3e566;
+        --const-text-sec-color: #a5cf61;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-sec-color);
+        --text-color-secondary: var(--const-text-sec-color);
+        --text-color-ternary: var(--const-text-sec-color);
+        --text-color-link: var(--const-text-sec-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
     :root.urara {
         --const-bg-color: rgb(247, 210, 255);
         --const-text-color: #0000ff;
@@ -987,6 +1089,19 @@ p {
     font-family: 'Nunito Sans', sans-serif;
     letter-spacing: 0px;
 }
+
+ol {
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1.3px;
+    font-weight: 200;
+    text-align: left;
+}
+
+ul {
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 0px;
+}
+
 h1 {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 3em;
