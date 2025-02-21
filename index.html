@@ -208,7 +208,7 @@
     });
 
 
-
+    // scrollable art gallery.
     const scrollContainer = document.querySelector('.horizontal-scroll');
 
     scrollContainer.addEventListener('mousedown', (e) => {
@@ -318,6 +318,14 @@
             <button class="theme-btn" onclick="setTheme('photosynthesis', 'pictures/favicon_blue.png')" title="photosynthesis mode">
                 <i class="fa-solid fa-seedling"></i>
             </button>
+            <!--
+            <button class="theme-btn" onclick="setTheme('concrete', 'pictures/favicon_blue.png')" title="concrete mode">
+                <i class="fa-solid fa-city"></i>
+            </button>
+            <button class="theme-btn" onclick="setTheme('sunset', 'pictures/favicon_blue.png')" title="sunset mode">
+                <i class="fa-solid fa-cloud-sun"></i>
+            </button>
+            -->
             <button class="theme-btn" onclick="showSequencer()">
                 <i class="fa-solid fa-record-vinyl"></i>
             </button>
@@ -360,8 +368,25 @@
                         <!--<h2 class="announcement"> I am on the job market this year! </h2>-->
                         <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
                         <!--<p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>-->
-                        <p class="about-text"> My work is impact-driven, leveraging ubiqutious technologies as platforms to improve population health and societal well-being. 
-                            I approach this through a mix of human-centric sensing, artificial intelligence, HCI, and qualitative study. More details about about my research interests and experience below. 
+                        <p class="about-text"> 
+                            My research focuses on <b>human-centric sensing</b> and <b>applied artificial intelligence</b> to enhance <b>health</b>,
+                            <b>sustainability</b>, and <b>societal well-being</b>. 
+
+                        </p>
+                        <p class="about-text"> 
+                            This includes leveraging or repurposing ubiquitous technology platforms like smartphones and wearables for new applications 
+                            in health and environmental sensing and developing AI systems to infer new insights from existing data sources. 
+                            <!--I develop AI-driven systems that leverage ubiquitous technologies — such as smartphones, wearable sensors, 
+                            AI agents, and environmental smart devices — for real-world applications in health monitoring, context-awareness, 
+                            and urban sustainability. -->
+                            My work bridges fundamental AI research with translational research, advancing commodity and ubiquitous technology for
+                            societal impact. 
+                            Some example applications I am most excited about include <b>disease prevention</b>, <b>promoting sustainable and healthy behavior</b>, 
+                            <b>context-aware AI agents</b>, and <b>urbanism</b>. 
+                        </p>
+                        <p class="about-text">
+                            More recently, I have been in the research sandbox with AI agents as a new ubiqutious platform to enhance human-AI collaboration by
+                            developing AI that leverages context from sensor data to solicit human feedback automatically.
                         </p>
                         <!--
                         <p class="about-text">I got my B.S. in Computer Engineering from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
@@ -397,23 +422,21 @@
         <div class="row split-row" id="row2">
             <div class="second-row-right-column" id="research">
                     <div class="text-wrapper">
-                        <h1> Research Interests </h1>
+                        <h1> Research Approach </h1>
                         <p> 
-                            I'm broadly interested in using <b>ubiqutious computing</b> and <b>artificial intelligence</b> to build <b>human-centric</b> systems that improve <b>societal well-being</b>.
-                            This includes leveraging or repurposing ubiqutious technology platforms like smartphones and wearables for new applications in health and environmental sensing and 
-                            developing AI systems to infer new insights from existing data sources. 
+                            My core expertise is in developing applied AI and human-centric sensing systems. 
+                            However, the societal applications I work with often call for longitudinal deployment studies, collecting specialized datasets, and human evaluation. 
+                            This participation in data collection and interaction with end-users informs how I approach AI development, and my expertise in AI development informs the types of sensing systems I build.
                         </p>
                         <p>
-                            This translational research often leads to longitudinal deployment studies, user studies, and qualitative evaluation with end-users. 
+                            While I typically build passive and scalable sensing systems by leveraging sensors already built into ubiquitous devices like smartphones and wearables,
+                            thanks to my inspiring labmates, I have also explored building custom hardware for novel interaction.
                         </p>
                         <p>
-                            More recently, I have been in the research sandbox with AI agents as a new ubiqutious platform to enhance human-AI collaboration by
-                            developing AI that leverages sensor data context to solicit human feedback automatically.
+                            
                         </p>
-                        <p> 
-                            Some example applications I am most excited about include disease prevention, promoting sustainable and healthy behavior, context-aware AI, and urbanism. 
-
-                        </p>
+    
+                    
                         <hr>
                         
                         
@@ -445,9 +468,9 @@
 
                         
                         <h1> Personal Interests </h1>
-                        <p> Outside of my research, I like to make digital and physical art through a variety of mediums including computer graphics, electronic music production, hardware synthesizers, and photography. 
-                            Some themes I find inspiring across all mediums are abstract ambience, harsh noise, procedural generation, and the design of everyday things.
-                            I also like to boulder, bike, write, and spend time in public space. 
+                        <p> Outside of research, I like to make CGI posters, compose and produce electronic music, play guitar, and take photos. 
+                            I am particulary inspired by ambience, harsh noise, procedurally generated art, and the design of everyday things.
+                            I also like to boulder, bike, write, and spend time in public. 
     
                         </p>
                         <hr>
@@ -487,6 +510,7 @@
                         <b>Joseph Breda*</b>, Daniel Campos Zamora*, Shwetak Patel, Jon Froehlich
                     </p>
                     <p class="venue"><i>Conference on Human Factors in Computing Systems (CHI), 2025</i></p>
+                    <p> * Indicates equal contribution </p>
                 </div>
                 <hr>
 
