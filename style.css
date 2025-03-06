@@ -578,6 +578,8 @@
 }
 /* This is the upper-most structure and is how I am separating the sections. */
 .table {
+    max-width: 1600px;
+    padding: 0 auto; /* Centers it */
     display: table;
     width: 100%;
 }
@@ -887,8 +889,25 @@ hr {
     height: auto;
 }
 
+.row-right-column .image {
+    display: None; 
+}
+
+@media only screen and (min-width: 1600px) {
+    /* Styles for screens 1600px and wider */
+    .table {
+        max-width: 1600px;
+        margin: 0 auto; /* Centers it */
+        display: block;
+        /*border-left: 2px solid var(--text-color-primary); /* Adds a solid black border */
+        /*border-right: 2px solid var(--text-color-primary); /* Adds a solid black border */
+        width: 100%;
+    }
+    
+  }
+
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1290px) { /*1237px?*/
+@media only screen and (max-width: 1290px) {
     [class*="column"] {
       width: 100%;
       float:none;
@@ -923,7 +942,7 @@ hr {
         padding-bottom: 10px; /* necessary otherwise theres a small buffer of background color? */
     }
     .row-right-column hr {
-        border: 1px solid var(--grad3-bottom-color)
+        border: 1px solid var(--grad3-bottom-color);
     }
     .row-left-column .image {
         width: 30% !important; 
@@ -997,6 +1016,16 @@ hr {
     margin-left: 12px;
     vertical-align: middle;
     width: 30%;
+}
+
+.gallery-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.gallery-container-hover {
+    width: 60%;
+    margin: 0 auto;
 }
 
 /* smaller images when hoverable version */

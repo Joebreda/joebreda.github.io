@@ -208,45 +208,7 @@
     });
 
 
-    // scrollable art gallery.
-    const scrollContainer = document.querySelector('.horizontal-scroll');
-
-    scrollContainer.addEventListener('mousedown', (e) => {
-        scrollContainer.isDown = true;
-        scrollContainer.startX = e.pageX - scrollContainer.offsetLeft;
-        scrollContainer.scrollLeftStart = scrollContainer.scrollLeft;
-    });
-
-    scrollContainer.addEventListener('mouseleave', () => scrollContainer.isDown = false);
-    scrollContainer.addEventListener('mouseup', () => scrollContainer.isDown = false);
-
-    scrollContainer.addEventListener('mousemove', (e) => {
-        if (!scrollContainer.isDown) return;
-        e.preventDefault();
-        const x = e.pageX - scrollContainer.offsetLeft;
-        const walk = (x - scrollContainer.startX) * 1.5; // Scroll speed
-        scrollContainer.scrollLeft = scrollContainer.scrollLeftStart - walk;
-    });
-
-    function leftScrollButtonClick() {
-        const scrollContainer = document.querySelector('.horizontal-scroll');
-        const rowWidth = scrollContainer.clientWidth;
-
-        // Only scroll left if there is more content to the left
-        if (scrollContainer.scrollLeft > 0) {
-            scrollContainer.scrollBy({ left: -rowWidth, behavior: 'smooth' });
-        }
-    }
-
-    function rightScrollButtonClick() {
-        const scrollContainer = document.querySelector('.horizontal-scroll');
-        const rowWidth = scrollContainer.clientWidth;
-
-        // Only scroll right if there is more content to the right
-        if (scrollContainer.scrollLeft < scrollContainer.scrollWidth - rowWidth) {
-            scrollContainer.scrollBy({ left: rowWidth, behavior: 'smooth' });
-        }
-    }
+    
 
     // Center my propic in the double column case where the height does not populate the full row.
     // This only works one way and the image doesnt grow back to fill the screen.
@@ -348,7 +310,7 @@
         
     </div></div>
 
-
+    
     <div class="table">
         <div class="row split-row" id="row1">
             <div class="row-left-column">
@@ -364,6 +326,7 @@
 
             <div class="row-right-column">
                     <div class="text-wrapper">
+                        <img class="image" src="pictures/me4.JPG" alt="a picture of me">
                         <h1>About Me</h1>
                         <!--<h2 class="announcement"> I am on the job market this year! </h2>-->
                         <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
@@ -629,66 +592,37 @@
             </div>
         </div>
 
-        <div class="row-divider"> </div>
+        <div class="row-divider"> </div>        
+    
+    </div>
 
-        <!--
 
-        <div class="row" id="row3"> 
-            <div class="gallery-container">
-                <h1>Blender Art</h1>
-                <div class="art-gallery" id="galleryWrapper">
+    <div class="row" id="row3">    
+        <div class="gallery-container">
+            <h1>Blender Art</h1>
+            <div class="art-gallery" id="galleryWrapper">
+                <div class="gallery-slide">
                     <div class="art-gallery-column">
-                        <a href="#" class="hover-link" data-image="digital_art/SKULL.png"><img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/SKULL2.png"><img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/SKULL3.png"><img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/clam.png"><img src="digital_art/clam.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/bubble_chain.png"><img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/pile.png"><img src="digital_art/pile.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/plant.png"><img src="digital_art/plant.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/shell.png"><img src="digital_art/shell.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/tree.png"><img src="digital_art/tree.png" alt="A piece of visual art I made using Blender"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/liquify_series/fear.jpg"><img src="digital_art/liquify_series/fear.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/liquify_series/anger.jpg"><img src="digital_art/liquify_series/anger.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/liquify_series/lavafields_corrupt.jpg"><img src="digital_art/liquify_series/lavafields_corrupt.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/liquify_series/intelligence.jpg"><img src="digital_art/liquify_series/intelligence.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/liquify_series/joy.jpg"><img src="digital_art/liquify_series/joy.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/liquify_series/blank.jpg"><img src="digital_art/liquify_series/blank.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/posters/barbs_and_flowers.jpg"><img src="digital_art/posters/barbs_and_flowers.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/posters/smaller.jpg"><img src="digital_art/posters/smaller.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                        <a href="#" class="hover-link" data-image="digital_art/posters/ghost_barbed_wire.png"><img src="digital_art/posters/ghost_barbed_wire.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
-                    </div>
-                </div>
-            </div>
-        </div>  
-        -->
-        
-
-        <!--
-        <div class="row" id="row3">    
-            <div class="gallery-container">
-                <h1>Blender Art</h1>
-                <div class="art-gallery" id="galleryWrapper">
-                    <div class="gallery-slide">
-                        <div class="art-gallery-column">
-                            <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/clam.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/pile.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/plant.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/shell.png" alt="A piece of visual art I made using Blender">
-                            <img src="digital_art/tree.png" alt="A piece of visual art I made using Blender">
-                            
-                        </div>
+                        <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/clam.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/pile.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/plant.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/shell.png" alt="A piece of visual art I made using Blender">
+                        <img src="digital_art/tree.png" alt="A piece of visual art I made using Blender">
+                        
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row-divider"> </div>
+    <div class="row-divider"> </div>
 
-        <div class="row" id="row4">
+    <div class="row" id="row4">
+        <div class="gallery-container">
             <div class="art-gallery">
                 <div class="gallery-slide">
                     <div class="art-gallery-column">
@@ -702,10 +636,11 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row-divider"> </div>
 
-        <div class="row" id="row5">
+    <div class="row" id="row5">
+        <div class="gallery-container">
             <div class="art-gallery">
                 <div class="gallery-slide">
                     <div class="art-gallery-column">
@@ -716,66 +651,96 @@
                 </div>
             </div>
         </div>
-        -->
-
-        <div class="scroll-container">
-            <button class="scroll-button left-button" onclick="leftScrollButtonClick()">&#9664;</button> <!-- Left arrow -->
-            <div class="horizontal-scroll">
-                
-                <div class="row" id="row3">    
-                    <div class="gallery-container">
-                        <h1>Blender Art</h1>
-                        <div class="art-gallery" id="galleryWrapper">
-                            <div class="gallery-slide">
-                                <div class="art-gallery-column">
-                                    <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/clam.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/pile.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/plant.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/shell.png" alt="A piece of visual art I made using Blender">
-                                    <img src="digital_art/tree.png" alt="A piece of visual art I made using Blender">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" id="row3">
-                    <div class="art-gallery">
-                        <div class="gallery-slide">
-                            <div class="art-gallery-column">
-                                <img src="digital_art/liquify_series/fear.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                                <img src="digital_art/liquify_series/anger.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                                <img src="digital_art/liquify_series/lavafields_corrupt.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                                <img src="digital_art/liquify_series/intelligence.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                                <img src="digital_art/liquify_series/joy.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                                <img src="digital_art/liquify_series/blank.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" id="row3">
-                    <div class="art-gallery">
-                        <div class="gallery-slide">
-                            <div class="art-gallery-column">
-                                <img src="digital_art/posters/barbs_and_flowers.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                                <img src="digital_art/posters/smaller.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                                <img src="digital_art/posters/ghost_barbed_wire.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <button class="scroll-button right-button" onclick="rightScrollButtonClick()">&#9654;</button> <!-- Right arrow -->
-        </div> 
-
     </div>
+        
+    <!--
+    <div class="row" id="row3"> 
+        <div class="gallery-container-hover">
+            <h1>Blender Art</h1>
+            <div class="art-gallery" id="galleryWrapper">
+                <div class="art-gallery-column">
+                    <a href="#" class="hover-link" data-image="digital_art/SKULL.png"><img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/SKULL2.png"><img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/SKULL3.png"><img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/clam.png"><img src="digital_art/clam.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/bubble_chain.png"><img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/pile.png"><img src="digital_art/pile.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/plant.png"><img src="digital_art/plant.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/shell.png"><img src="digital_art/shell.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/tree.png"><img src="digital_art/tree.png" alt="A piece of visual art I made using Blender"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/liquify_series/fear.jpg"><img src="digital_art/liquify_series/fear.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/liquify_series/anger.jpg"><img src="digital_art/liquify_series/anger.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/liquify_series/lavafields_corrupt.jpg"><img src="digital_art/liquify_series/lavafields_corrupt.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/liquify_series/intelligence.jpg"><img src="digital_art/liquify_series/intelligence.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/liquify_series/joy.jpg"><img src="digital_art/liquify_series/joy.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/liquify_series/blank.jpg"><img src="digital_art/liquify_series/blank.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/posters/barbs_and_flowers.jpg"><img src="digital_art/posters/barbs_and_flowers.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/posters/smaller.jpg"><img src="digital_art/posters/smaller.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                    <a href="#" class="hover-link" data-image="digital_art/posters/ghost_barbed_wire.png"><img src="digital_art/posters/ghost_barbed_wire.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software"></a>
+                </div>
+            </div>
+        </div>
+    </div>  
+    -->
+
+    <!--
+    <div class="scroll-container">
+        <button class="scroll-button left-button" onclick="leftScrollButtonClick()">&#9664;</button> 
+        <div class="horizontal-scroll">
+            
+            <div class="row" id="row3">    
+                <div class="gallery-container">
+                    <h1>Blender Art</h1>
+                    <div class="art-gallery" id="galleryWrapper">
+                        <div class="gallery-slide">
+                            <div class="art-gallery-column">
+                                <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/clam.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/pile.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/plant.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/shell.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/tree.png" alt="A piece of visual art I made using Blender">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="row3">
+                <div class="art-gallery">
+                    <div class="gallery-slide">
+                        <div class="art-gallery-column">
+                            <img src="digital_art/liquify_series/fear.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            <img src="digital_art/liquify_series/anger.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            <img src="digital_art/liquify_series/lavafields_corrupt.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            <img src="digital_art/liquify_series/intelligence.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            <img src="digital_art/liquify_series/joy.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            <img src="digital_art/liquify_series/blank.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="row3">
+                <div class="art-gallery">
+                    <div class="gallery-slide">
+                        <div class="art-gallery-column">
+                            <img src="digital_art/posters/barbs_and_flowers.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            <img src="digital_art/posters/smaller.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            <img src="digital_art/posters/ghost_barbed_wire.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="scroll-button right-button" onclick="rightScrollButtonClick()">&#9654;</button> 
+    </div>
+    -->
 
   <!-- Credit for this very cool plain CSS effect to whoever designed the OpenAI website as of 2023 -->
   <div class="mt-spacing-7 pb-spacing-7 bg-inverse" aria-hidden="true">
