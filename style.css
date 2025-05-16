@@ -914,6 +914,9 @@ hr {
       display: block;
     }
 
+    hr {
+        width: 90%;
+    }
     /* remove the easter egg toggles and squencer in mobile. */
     .toggle-container {
         display: none;
