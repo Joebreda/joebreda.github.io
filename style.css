@@ -165,6 +165,70 @@
 
         --hr-color: var(--const-text-color);
     }
+    :root.bolt {
+        --const-bg-color:#c0956e;
+        --const-text-color: #ffff00;
+        --const-highlight-color: #0004ff;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
+    :root.barcode {
+        --const-bg-color:#ffffff;
+        --const-text-color: #000000;
+        --const-highlight-color: #ff0000;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
     :root.photosynthesis {
         --const-bg-color:#264e49;
         --const-text-color: #6f9b3c;
