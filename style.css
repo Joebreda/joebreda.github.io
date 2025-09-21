@@ -564,8 +564,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        width: calc(600px + (5px * 16)); /* Additional space for the margins */
-        height: calc(600px + (5px * 16));
+        width: calc(500px + (5px * 16)); /* Additional space for the margins */
+        height: calc(500px + (5px * 16));
         padding: 2.5px; /* Half of the space to evenly distribute the boxes */
         /*box-shadow: 10px 10px 15px 10px rgb(37 18 211 / 97%); */
       }
@@ -779,7 +779,7 @@ b {
     float: right; /* and keeps it on the right side */
     height: 100%;
     text-align: center;
-    display: flex;
+    display: block;
 }
 
 /* Wrapper of that text that allows it to center within the right half. */
@@ -811,7 +811,7 @@ b {
 }
 
 .news ul {
-    height: 100px;            /* Set a fixed height for the ul */
+    height: 150px;            /* Set a fixed height for the ul */
     border: 1px solid var(--hr-color);
     overflow-y: scroll;       /* Enable vertical scrolling */
     scrollbar-width: none;    /* Hide scrollbar in Firefox */
@@ -970,12 +970,60 @@ hr {
     
   }
 
+.notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.note {
+    border: 3px solid var(--hr-color);
+    margin: 5px;
+}
+.note:hover {
+    text-decoration: none;
+    background-color: var(--hr-color);
+    color: var(--bg-color);
+}
+
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1290px) {
+@media only screen and (max-width: 1150px) { /* Max width needs to be chnaged to match the length of the content to the right of it to avoid full scale headshot being smaller than the right side.*/ 
     [class*="column"] {
       width: 100%;
       float:none;
       display: block;
+    }
+
+    .navbar {
+        visibility: hidden;
+    }
+
+    /* Removes the left column in narrow mode for mobile which removes the full screen headshot. */
+    #row1 .row-left-column {
+        display: none;
+    }
+    #row1 .row-right-column {
+        margin-top: 75px;
+    }
+
+    .row-right-column .image {
+        margin: 10px 20px 5px 20px;
+        width: 20%;
+        border: 2px solid var(--const-text-color);
+        max-width: 210px;
+        min-width: 150px;
+        height: 100%;
+        display: block;
+        float: left; /* Float the image to allow text wrapping */
+    }
+    .row-right-column .about-section {
+        display: block;
+        width: 100% ;
+        height: auto;
+        margin: 10px;
+    }
+    .row-right-column .pic-and-text {
+        display: block;
     }
 
     hr {
@@ -1059,7 +1107,8 @@ hr {
     .second-row-right-column .text-wrapper p { 
         text-align: left;
     }
-  }
+}
+
 /* Third section. */
 .art-gallery {
     display: -ms-flexbox; /* IE10 */
@@ -1086,7 +1135,6 @@ hr {
 }
 
 .gallery-container {
-    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -1153,6 +1201,7 @@ hr {
 /* Background color of third section. */
 #row3 {
     background: linear-gradient(180deg, var(--grad1-top-color) 0%, var(--grad1-bottom-color) 100%);
+    margin: 0 auto;
 }
 #row3 h1 {
     color: var(--grad1-h1-color);
@@ -1308,3 +1357,88 @@ text-decoration: none;
 .checker-bg-primary {
     background-color: var(--interests-bg-color); /* replace with your desired color */
 }
+
+
+
+/* Collapsible art section */ 
+.collapsible-container {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Serves to color the background of the collapse icon with variable size */
+.header-background {
+    background-color: var(--text-color-primary);
+    linear-gradient(180deg, var(--grad3-top-color) 0%, var(--grad3-bottom-color) 100%)
+    width: 100%;  /* Explicitly set to full width */
+}
+
+.collapsible-header {
+    background-color: transparent;
+    padding: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    width: fit-content;
+    margin: 0 auto;  /* This centers the narrow header */
+}
+
+.collapsible-header:hover .collapsible-icon {
+    opacity: 0.5;
+}
+
+.collapsible-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--const-highlight-color);
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    margin-right: 0;
+}
+
+.collapsible-container.active .collapsible-title {
+    opacity: 1;
+    max-width: 300px;
+    margin-right: 10px;
+}
+
+.collapsible-icon {
+    font-size: 30px;
+    color: var(--research-bg-color);
+    transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+    padding: 0px;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.collapsible-container.active .collapsible-content {
+    max-height: none;
+}
+/* Color of the collapsible container header when its expanded */
+.active {
+    background-color: var(--grad1-top-color); 
+}
+
+.collapsible-container.active .collapsible-icon {
+    transform: rotate(180deg);
+    color: var(--text-color-primary);
+}
+
+.collapsible-container.active .header-background {
+    background-color: var(--research-bg-color);
+    width: 100%;  /* Explicitly set to full width */
+}
+

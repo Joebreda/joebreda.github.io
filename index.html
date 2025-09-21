@@ -210,9 +210,14 @@
         });
     });
 
-
-    
-
+    function toggleCollapse(containerId) {
+        const container = document.getElementById(containerId);
+        if (container) {
+            container.classList.toggle('active');
+        } else {
+            console.error('Collapsible container not found:', containerId);
+        }
+    }
     // Center my propic in the double column case where the height does not populate the full row.
     // This only works one way and the image doesnt grow back to fill the screen.
     /*
@@ -335,58 +340,57 @@
 
             <div class="row-right-column">
                     <div class="text-wrapper">
-                        <img class="image" src="pictures/me4.JPG" alt="a picture of me">
                         <h1>About Me</h1>
-                        <!--<h2 class="announcement"> I am on the job market this year! </h2>-->
-                        <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
-                        <!--<p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>-->
-                        <p class="about-text"> 
-                            My research focuses on <b>human-centric sensing</b> and <b>applied artificial intelligence</b> to enhance <b>health</b>,
-                            <b>sustainability</b>, and <b>societal well-being</b>. 
 
-                        </p>
-                        <p class="about-text"> 
-                            This includes leveraging or repurposing ubiquitous technology platforms like smartphones and wearables for new applications 
-                            in health and environmental sensing and developing AI systems to infer new insights from existing data sources. 
-                            <!--I develop AI-driven systems that leverage ubiquitous technologies — such as smartphones, wearable sensors, 
-                            AI agents, and environmental smart devices — for real-world applications in health monitoring, context-awareness, 
-                            and urban sustainability. -->
-                            My work bridges fundamental AI research with translational research, advancing commodity and ubiquitous technology for
-                            societal impact. 
-                            Some example applications I am most excited about include <b>disease prevention</b>, <b>promoting sustainable and healthy behavior</b>, 
-                            <b>context-aware AI agents</b>, and <b>urbanism</b>. 
-                        </p>
-                        <p class="about-text">
-                            More recently, I have been in the research sandbox with AI agents as a new ubiqutious platform to enhance human-AI collaboration by
-                            developing AI that leverages context from sensor data to solicit human feedback automatically.
-                        </p>
-                        <!--
-                        <p class="about-text">I got my B.S. in Computer Engineering from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
-                            where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
-                        -->    
-                            <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a></p>
-                        <hr>
-                        <!--<img class="corner-logo" id="logo" src="pictures/favicon_blue.png" alt="my logo">-->
-                        <div class="news">
-                            <H2> Recent News </H2>
-                            <ul>
-                                <li> ProxiCycle featured in <i class="fa-solid fa-microphone"></i> NPR All Things Considered! </li>
-                                <li> Two papers on improving navigation platforms for active transportation <i class="fa-solid fa-person-walking"></i><i class="fa-solid fa-person-biking"></i> accepted to CHI 2025! </li>
-                                <li> FeverPhone won <i class="fas fa-trophy"></i> Distinguished Paper Award at Ubicomp 2024! </li>
-                                <li> Spent the summer of 2024 deploying smart <i class="fa-solid fa-person-biking"></i> bicycle sensors in Seattle. </li>
-                                <li> Thailand Rideshare Study Published in CSCW 2024! <a href="https://dl.acm.org/doi/pdf/10.1145/3653706"><i class="fa-solid fa-book"></i></a> </li>
-                                <li> Traveled to the NIH in DC to conduct a <i class="fa-solid fa-stethoscope"></i> clinical trials, October 2023.</li>
-                                <li> Traveled to Cancun to present FeverPhone at Ubicomp 2023. <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
-                                <li> Traveled to Germany for the 10th Heidelberg Laureate Forum! </li>
-                                <li> Traveled to Thailand again to deploy mobile AQI sensors with <i class="fa-solid fa-motorcycle"></i> motorcycle drivers, July 2023. </li>
-                                <li> FeverPhone Published in IMWUT 2023! <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
-                                <li> Traveled to Thailand to conduct qualitative interviews wtih rideshare drivers, August 2022.</li>
-                                <li> Left my Student Researcher Position at Google, August 2022.</li>
-                                <li> Spent Summer 2022 part-time at Google and part-time conducting a <i class="fa-solid fa-stethoscope"></i> clinical trial for FeverPhone at UW Northwest Hospital. </li>
-                            </ul>
+                            <div class="pic-and-text">
+                            <img class="image" src="pictures/me4.JPG" alt="a picture of me">
+
+                            <div class="about-section">
+                                <!--<h2 class="announcement"> I am on the job market this year! </h2>-->
+                                <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
+                                <!--<p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>-->
+                                <p class="about-text"> 
+                                    My research focuses on <b>human-centric sensing</b> and <b>applied artificial intelligence</b> to enhance <b>health</b>,
+                                    <b>sustainability</b>, and <b>societal well-being</b>. 
+                                    This includes repurposing, or building on top of, ubiquitous technology platforms like smartphones, wearables, and AI agents for new applications 
+                                    in public and environmental health. 
+                                    My work is impact-driven, translating foundational computer science research to societal challenges through the development of scalable sensing and 
+                                    AI systems for real-world problems. 
+                                    Some example applications I am most excited about include <b>disease prevention</b>, <b>promoting sustainable and healthy behavior</b>, 
+                                    <b>context-aware AI</b>, and <b>urbanism</b>. 
+                                </p>
+                                <!--
+                                <p class="about-text">I got my B.S. in Computer Engineering from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
+                                    where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
+                                -->    
+                                    <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a></p>
+                                <hr>
+                                <!--<img class="corner-logo" id="logo" src="pictures/favicon_blue.png" alt="my logo">--> 
+                            </div>
                         </div>
                     </div>
-                    
+
+                    <div class="text-wrapper">
+                    <div class="news">
+                        <H2> Recent News </H2>
+                        <ul>
+                            <li> FeverPhone highlighted in GetMobile Column Article! </li>
+                            <li> ProxiCycle featured in <i class="fa-solid fa-microphone"></i> NPR All Things Considered! </li>
+                            <li> Two papers on improving navigation platforms for active transportation <i class="fa-solid fa-person-walking"></i><i class="fa-solid fa-person-biking"></i> accepted to CHI 2025! </li>
+                            <li> FeverPhone won <i class="fas fa-trophy"></i> Distinguished Paper Award at Ubicomp 2024! </li>
+                            <li> Spent the summer of 2024 deploying smart <i class="fa-solid fa-person-biking"></i> bicycle sensors in Seattle. </li>
+                            <li> Thailand Rideshare Study Published in CSCW 2024! <a href="https://dl.acm.org/doi/pdf/10.1145/3653706"><i class="fa-solid fa-book"></i></a> </li>
+                            <li> Traveled to the NIH in DC to conduct a <i class="fa-solid fa-stethoscope"></i> clinical trials, October 2023.</li>
+                            <li> Traveled to Cancun to present FeverPhone at Ubicomp 2023. <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
+                            <li> Traveled to Germany for the 10th Heidelberg Laureate Forum! </li>
+                            <li> Traveled to Thailand again to deploy mobile AQI sensors with <i class="fa-solid fa-motorcycle"></i> motorcycle drivers, July 2023. </li>
+                            <li> FeverPhone Published in IMWUT 2023! <a href="https://dl.acm.org/doi/pdf/10.1145/3580850"><i class="fa-solid fa-book"></i></a> </li>
+                            <li> Traveled to Thailand to conduct qualitative interviews wtih rideshare drivers, August 2022.</li>
+                            <li> Left my Student Researcher Position at Google, August 2022.</li>
+                            <li> Spent Summer 2022 part-time at Google and part-time conducting a <i class="fa-solid fa-stethoscope"></i> clinical trial for FeverPhone at UW Northwest Hospital. </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -397,14 +401,14 @@
                     <div class="text-wrapper">
                         <h1> Research Approach </h1>
                         <p> 
-                            My core expertise is in developing applied AI and human-centric sensing systems. 
-                            However, the societal applications I work with often call for longitudinal deployment studies, collecting specialized evaluation datasets, and human-centric methods. 
-                            Because of this, I have significant experience designing complex experiments and full-stack development of end-to-end infrastructure in service of them. 
-                            Additionally, my participation in data collection and interaction with end-users informs how I approach AI development, and my expertise in AI development informs the types of experiments and sensing systems I build.
+                            My core technical expertise is in developing applied AI and human-centric sensing systems. 
+                            However, the societal applications I work with often call for longitudinal deployment studies, collecting specialized evaluation datasets, deep empirical investigation, and human-centric methods. 
+                            Because of this, I have significant experience designing complex, often <it>"in-the-wild"</it> experiments and full-stack development of end-to-end infrastructure in service of them. 
+                            My participation in data collection and interaction with end-users informs how I approach AI development, and my expertise in AI drivers the types of experiments and sensing systems I build.
                         </p>
                         <p>
                             While I typically build passive and scalable sensing systems by leveraging sensors already built into ubiquitous devices like smartphones and wearables,
-                            thanks to my inspiring labmates, I have also explored building custom hardware for novel interaction.
+                            thanks to my inspiring labmates, I have also explored building custom hardware for novel interfaces.
                         </p>
                         <p>
                             
@@ -422,7 +426,7 @@
                         </p>
 
                         <p>
-                            Previously, I was a Student Researcher at <b>Google Research</b> where I worked on geospatial deep learning models for forecasting driver safety to improve Google Maps.
+                            Previously, I was a Student Researcher at <b>Google Research</b> where I worked on geospatial computer vision models for forecasting driver safety to improve Google Maps.
                         </p>
                         <p> 
                             I have also traveled to Bangkok and Chiang Mai Thailand to conduct a mixed-methods study and mobile sensor deployment to understand the experience of gig-workers in relation to 
@@ -446,8 +450,23 @@
     
                         </p>
                         <hr>
-
-
+<!--
+                        <h1> Thoughts </h1>
+                        <div class="notes">
+                            <a class="note">
+                                <p>100 Pieces of Advice for a PhD Student</p>
+                            </a>
+                            <a class="note">
+                                <p>How to start an idea</p>
+                            </a>
+                            <a class="note">
+                                <p>Another note to test the wrap size</p>
+                            </a>
+                            <a class="note">
+                                <p>how many can i fit here?</p>
+                            </a>
+                        </div>
+-->
                     </div>
                 
             </div>
@@ -460,6 +479,16 @@
                 <h1> Publications </h1>
                 <hr>
 
+                <div class="publication-wrapper">
+                    <p class="title">
+                        <b>Lessons Learned From FeverPhone: Towards Scalable, Accessible At-Home Diagnostics via Fever Detection on Unmodified Smartphones</b>
+                    </p>
+                    <p class="author-list">
+                        <b>Joseph Breda</b>, Mastafa Springston, Alex Mariakakis, Shwetak Patel
+                    </p>
+                    <p class="venue"><i>GetMobile: Mobile Computing and Communications, 2025</i><a href=https://dl.acm.org/doi/abs/10.1145/3760535.3760543 class="hover-link" data-image="paper_thumbnails/getmobile.jpeg"> <i class="fa-regular fa-file"></i> pdf</a></p>
+                </div>
+                <hr>
                 <div class="hover-image">
                     <img src="#" alt="Hover Image" id="hover-img">
                   </div>
@@ -606,58 +635,65 @@
         <div class="row-divider"> </div>        
     
     </div>
-
-
-    <div class="row" id="row3">    
-        <div class="gallery-container">
-            <h1>Blender Art</h1>
-            <div class="art-gallery" id="galleryWrapper">
-                <div class="gallery-slide">
-                    <div class="art-gallery-column">
-                        <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/clam.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/pile.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/plant.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/shell.png" alt="A piece of visual art I made using Blender">
-                        <img src="digital_art/tree.png" alt="A piece of visual art I made using Blender">
-                        
+    <div class="collapsible-container" id="blender-art-collapse">
+        <div class="header-background">
+        <div class="collapsible-header" onclick="toggleCollapse('blender-art-collapse')">
+            <!--<span class="collapsible-title"></span>-->
+            <span class="collapsible-icon"><i class="fa-solid fa-angles-down"></i></span>
+        </div>
+        </div>
+        <div class="collapsible-content">
+            <!-- Your existing content goes here -->
+            <div class="row" id="row3">    
+                <div class="gallery-container">
+                    <h1>Blender Art</h1>
+                    <div class="art-gallery" id="galleryWrapper">
+                        <div class="gallery-slide">
+                            <div class="art-gallery-column">
+                                <img src="digital_art/SKULL.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/SKULL2.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/SKULL3.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/clam.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/bubble_chain.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/pile.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/plant.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/shell.png" alt="A piece of visual art I made using Blender">
+                                <img src="digital_art/tree.png" alt="A piece of visual art I made using Blender">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row-divider"> </div>
-
-    <div class="row" id="row4">
-        <div class="gallery-container">
-            <div class="art-gallery">
-                <div class="gallery-slide">
-                    <div class="art-gallery-column">
-                        <img src="digital_art/liquify_series/fear.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                        <img src="digital_art/liquify_series/anger.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                        <img src="digital_art/liquify_series/lavafields_corrupt.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                        <img src="digital_art/liquify_series/intelligence.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                        <img src="digital_art/liquify_series/joy.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                        <img src="digital_art/liquify_series/blank.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+    
+            <div class="row-divider"> </div>
+    
+            <div class="row" id="row4">
+                <div class="gallery-container">
+                    <div class="art-gallery">
+                        <div class="gallery-slide">
+                            <div class="art-gallery-column">
+                                <img src="digital_art/liquify_series/fear.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                                <img src="digital_art/liquify_series/anger.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                                <img src="digital_art/liquify_series/lavafields_corrupt.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                                <img src="digital_art/liquify_series/intelligence.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                                <img src="digital_art/liquify_series/joy.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                                <img src="digital_art/liquify_series/blank.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="row" id="row5">
-        <div class="gallery-container">
-            <div class="art-gallery">
-                <div class="gallery-slide">
-                    <div class="art-gallery-column">
-                        <img src="digital_art/posters/barbs_and_flowers.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                        <img src="digital_art/posters/smaller.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
-                        <img src="digital_art/posters/ghost_barbed_wire.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+    
+            <div class="row" id="row5">
+                <div class="gallery-container">
+                    <div class="art-gallery">
+                        <div class="gallery-slide">
+                            <div class="art-gallery-column">
+                                <img src="digital_art/posters/barbs_and_flowers.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                                <img src="digital_art/posters/smaller.jpg" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                                <img src="digital_art/posters/ghost_barbed_wire.png" alt="A piece of visual art I made using Blender, an open source 3D modeling software">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
