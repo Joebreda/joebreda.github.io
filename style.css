@@ -1,5 +1,51 @@
 /* The first in the order here is the default */
+
+/*
+Dolphin https://coolors.co/palette/0d1321-1d2d44-3e5c76-748cab-f0ebd8
+--const-bg-color: #748CAB;
+--const-text-color: #F0EBD8;
+Sky 
+--const-bg-color: #E6F7FF;
+--const-text-color: #2200FF;
+Academia
+--const-bg-color: #FFFBE9;
+ --const-text-color: #761818;
+
+
+*/
 :root,
+    :root.academic {
+        --const-bg-color: #FFF2D5;
+        --const-text-color: #7A0606;
+        --const-highlight-color: #DA1B1B;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
     :root.wire_frame {
         --const-bg-color: rgb(252, 243, 213);
         --const-text-color: #0004ff;
@@ -135,7 +181,7 @@
     }
     :root.ectoplasm {
         --const-bg-color:#363b37;
-        --const-text-color: #07ffb9;
+        --const-text-color: #07ffb9; /*#DCF763*/
         --const-highlight-color: #3ded97;
 
         /* Background colors in Dark mode */
@@ -450,6 +496,19 @@
     
         --hr-color: #e62727;
     }
+
+    /* #FFD700; */ 
+    
+        
+    ::selection {
+        background-color: var(--const-text-color);
+        color: var(--const-bg-color);
+      }
+      
+      ::-moz-selection {
+        background-color: var(--const-text-color);
+        color: var(--const-bg-color);
+      }
 
     .theme-btn {
         width: 3em;
@@ -814,12 +873,31 @@ b {
     height: 150px;            /* Set a fixed height for the ul */
     border: 1px solid var(--hr-color);
     overflow-y: scroll;       /* Enable vertical scrolling */
-    scrollbar-width: none;    /* Hide scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    /* Firefox */
+    scrollbar-color: #888 #f1f1f1;
+    scrollbar-width: thin;
 }
  
-.news ul::-webkit-scrollbar {
+ul::-webkit-scrollbar {
     display: none;            /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+/* Chrome, Safari, Edge */
+ul::-webkit-scrollbar {
+width: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+ul::-webkit-scrollbar-thumb {
+background: #888;
+border-radius: 5px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+background: #555;
 }
 
 /* Text contained in right half of first section. */
@@ -980,6 +1058,12 @@ hr {
     border: 3px solid var(--hr-color);
     margin: 5px;
 }
+
+.note p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
 .note:hover {
     text-decoration: none;
     background-color: var(--hr-color);
@@ -992,6 +1076,15 @@ hr {
       width: 100%;
       float:none;
       display: block;
+    }
+
+    .table {
+        max-width: 750px;
+        margin: 0 auto; /* Centers it */
+        display: block;
+        /*border-left: 2px solid var(--text-color-primary); /* Adds a solid black border */
+        /*border-right: 2px solid var(--text-color-primary); /* Adds a solid black border */
+        width: 100%;
     }
 
     .navbar {
@@ -1370,7 +1463,6 @@ text-decoration: none;
 /* Serves to color the background of the collapse icon with variable size */
 .header-background {
     background-color: var(--text-color-primary);
-    linear-gradient(180deg, var(--grad3-top-color) 0%, var(--grad3-bottom-color) 100%)
     width: 100%;  /* Explicitly set to full width */
 }
 
