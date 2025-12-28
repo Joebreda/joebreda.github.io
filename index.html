@@ -147,6 +147,17 @@
         }
     }
 
+    function loadSVG(containerId, svgFile) {
+        fetch(svgFile)
+            .then(response => response.text())
+            .then(svgContent => {
+            document.getElementById(containerId).innerHTML = svgContent;
+            })
+            .catch(error => console.error('Error loading SVG:', error));
+        }
+        loadSVG('svg-container1', 'scale.svg');
+        loadSVG('svg-container2', 'secondary_sensing.svg');
+
     // Add the hover image functionality 
     // Make anything into a hover image by adding <a href="#" class="hover-link" data-image="project_images/thai_rideshare.png"></a>
     document.addEventListener('DOMContentLoaded', () => {
@@ -342,29 +353,31 @@
             <div class="row-right-column">
                     <div class="text-wrapper">
                         <h1>About Me</h1>
+                        <h3> I am on the Job Market </h3>
 
                             <div class="pic-and-text">
                             <img class="image" src="pictures/me4.JPG" alt="a picture of me">
 
                             <div class="about-section">
+                                
                                 <!--<h2 class="announcement"> I am on the job market this year! </h2>-->
-                                <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science and Engineer</a>.</p>
+                                <p class="about-text">I am a final year PhD student advised by <a href="https://people.ece.uw.edu/patel_shwetak/">Shwetak Patel</a> in the <a href="https://ubicomplab.cs.washington.edu/">Ubiquitous Computing Lab</a> at the <a href="https://www.washington.edu/">University of Washington</a> <a href="https://www.cs.washington.edu/">Paul G. Allen School of Computer Science & Engineer</a>.
+                                    I am also currently a student researcher at Google conducting large-scale evaluation of LLMs for medical diagnosis.</p>
+                                
                                 <!--<p class="about-text"> My work is on leveraging ubiqutious technology and artificial intelligence for public health, urbanism, and sustainability. More about my work in the section below.</p>-->
                                 <p class="about-text"> 
-                                    My research focuses on <b>human-centric sensing</b> and <b>applied artificial intelligence</b> to enhance <b>health</b>,
-                                    <b>sustainability</b>, and <b>societal well-being</b>. 
-                                    This includes repurposing, or building on top of, ubiquitous technology platforms like smartphones, wearables, and AI agents for new applications 
-                                    in public and environmental health. 
-                                    My work is impact-driven, translating foundational computer science research to societal challenges through the development of scalable sensing and 
-                                    AI systems for real-world problems. 
+                                    My research is on developing and deploying <b>human-centric sensing</b> and <b>artificial intelligence</b> for <b>public health</b>
+                                    and <b>societal well-being</b>. 
+                                    I do this by leveraging and repurposing society-scale technology platforms like smartphones, wearables, and commercial AI for population-scale studies and interventions. 
+                                    I then deploy and evaluate these systems with real-populations, addressing the complexity of aligning these technologies with their collective needs. 
                                     Some example applications I am most excited about include <b>disease prevention</b>, <b>promoting sustainable and healthy behavior</b>, 
-                                    <b>context-aware AI</b>, and <b>urbanism</b>. 
+                                    <b>AI for accessible primary care</b>, and <b>urbanism</b>. 
                                 </p>
                                 <!--
                                 <p class="about-text">I got my B.S. in Computer Engineering from the <a href= "https://www.umass.edu/">University of Massachusetts Amherst</a>
                                     where I worked with <a href="https://blogs.umass.edu/jtaneja/">Jay Taneja</a>, <a href="https://people.cs.umass.edu/~shenoy/">Prashant Shenoy</a>, and <a href="https://www.davidirwin.info/">David Irwin</a>.</p>
                                 -->    
-                                    <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a></p>
+                                    <p class="link-bar-wrapper"><a href="resume.pdf">CV</a> / <a href="https://scholar.google.com/citations?user=5y7q7YsAAAAJ&hl=en">Google Scholar</a> / <a href="https://www.linkedin.com/in/joseph-breda/">LinkedIn</a></p>
                                 <hr>
                                 <!--<img class="corner-logo" id="logo" src="pictures/favicon_blue.png" alt="my logo">--> 
                             </div>
@@ -375,10 +388,10 @@
                     <div class="news">
                         <H2> Recent News </H2>
                         <ul>
-                            <li> Joined <i class="fa-brands fa-google"></i> Google for a year to study population scale effects of LLMs for differential diagnosis. </li>
-                            <li> Successfully Defended my Thesis, titled "Ubiquitous Computing Platforms as Scalable Surrogates in Public Health and Well-being" </li>
-                            <li> FeverPhone highlighted in GetMobile Column Article! </li>
-                            <li> ProxiCycle featured in <i class="fa-solid fa-microphone"></i> NPR All Things Considered! </li>
+                            <li> FeverPhone highlighted in GetMobile Column Article! August 2025</li>
+                            <li> Joined <i class="fa-brands fa-google"></i> Google for a year to study population-scale effects of LLMs for differential diagnosis. July 2025</li>
+                            <li> Successfully Defended my Thesis, titled "Ubiquitous Computing Platforms as Scalable Surrogates in Public Health and Well-being" May 2025</li>
+                            <li> ProxiCycle featured in <a href="https://www.npr.org/2025/05/15/nx-s1-5393918/this-week-in-science-biker-safety-orange-cats-and-a-gum-disease-heart-rhythm-link"><i class="fa-solid fa-microphone"></i> NPR All Things Considered! </a> May 2025</li>
                             <li> Two papers on improving navigation platforms for active transportation <i class="fa-solid fa-person-walking"></i><i class="fa-solid fa-person-biking"></i> accepted to CHI 2025! </li>
                             <li> FeverPhone won <i class="fas fa-trophy"></i> Distinguished Paper Award at Ubicomp 2024! </li>
                             <li> Spent the summer of 2024 deploying smart <i class="fa-solid fa-person-biking"></i> bicycle sensors in Seattle. </li>
@@ -404,22 +417,13 @@
                     <div class="text-wrapper">
                         <h1> Research Approach </h1>
                         <p> 
-                            My core technical expertise is in developing applied AI and human-centric sensing systems. 
-                            However, the societal applications I work with often call for longitudinal deployment studies, collecting specialized evaluation datasets, deep empirical investigation, and human-centric methods. 
-                            Because of this, I have significant experience designing complex, often <it>"in-the-wild"</it> experiments and full-stack development of end-to-end infrastructure in service of them. 
-                            My participation in data collection and interaction with end-users informs how I approach AI development, and my expertise in AI drivers the types of experiments and sensing systems I build.
-                        </p>
-                        <p>
-                            While I typically build passive and scalable sensing systems by leveraging sensors already built into ubiquitous devices like smartphones and wearables,
-                            thanks to my inspiring labmates, I have also explored building custom hardware for novel interfaces.
-                        </p>
-                        <p>
-                            
-                        </p>
-    
+                            My core technical expertise is in developing human-centric sensing and applied artificial intelligence. 
+                            However, understsanding and addressing the human factors of the societal applications I work with typically calls for longitudinal deployment studies, collecting specialized evaluation datasets, deep empirical investigation, and human-centric methods. 
+                            Because of this, I have significant experience designing complex, often <it>"in-the-wild"</it>, experiments and full-stack development of end-to-end infrastructure in service of them. 
+                            My participation in data collection and interaction with real populations informs how I approach AI development, and my experience in AI drivers the types of experiments and sensing systems I build.
+                        </p>    
                     
                         <hr>
-                        
                         
                         <h1> Notable Experiences </h1>
 
@@ -503,7 +507,7 @@
                         <b>Joseph Breda</b>, Keyu Chen, Thomas Plötz, Shwetak Patel
                     </p>
                     <p class="venue"><i>Conference on Human Factors in Computing Systems (CHI), 2025</i><a href=https://dl.acm.org/doi/10.1145/3706598.3713325 class="hover-link" data-image="paper_thumbnails/proxicycle.jpeg"> <i class="fa-regular fa-file"></i> pdf</a> <a href="https://www.geekwire.com/2025/uw-develops-bike-mounted-sensor-system-to-track-close-passing-cars-and-map-safer-cycling-routes/"><i class="fa-regular fa-newspaper"></i> GeekWire</a> </p>
-                    <p> <a href=https://www.washington.edu/news/2025/05/08/bicycle-handlebar-sensor-can-help-map-riskiest-bike-routes/?mkt_tok=NTI3LUFIUi0yNjUAAAGaY1dYhro3pyuzMhIbM8LA-KaW67I4ewIL6Zm3D9xALLQphpOCWNK4QmEwmqD5Lf62hKbotpSD4V4KdEpeMrE-bdw5j5P5Xwyf-zn4s-47Yls><i class="fa-solid fa-video"></i> UW News Video</a> | <a href="https://www.npr.org/2025/05/15/nx-s1-5393918/this-week-in-science-biker-safety-orange-cats-and-a-gum-disease-heart-rhythm-link"><i class="fa-solid fa-microphone"></i> Appeared on NPR All Things Considered!</a> | <a href="https://www.npr.org/2025/05/16/1251782103/orange-cats-dna-color-mutation"><i class="fa-solid fa-microphone"></i> NPR Short Wave!</a></p>
+                    <p> <a href=https://www.washington.edu/news/2025/05/08/bicycle-handlebar-sensor-can-help-map-riskiest-bike-routes/?mkt_tok=NTI3LUFIUi0yNjUAAAGaY1dYhro3pyuzMhIbM8LA-KaW67I4ewIL6Zm3D9xALLQphpOCWNK4QmEwmqD5Lf62hKbotpSD4V4KdEpeMrE-bdw5j5P5Xwyf-zn4s-47Yls><i class="fa-solid fa-video"></i> UW News Video</a> | <a href="https://www.npr.org/2025/05/15/nx-s1-5393918/this-week-in-science-biker-safety-orange-cats-and-a-gum-disease-heart-rhythm-link"><i class="fa-solid fa-microphone"></i> Appeared on NPR All Things Considered & Short Wave!</a></p>
                 </div>
                 <hr>
                 <div class="publication-wrapper">

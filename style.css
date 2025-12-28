@@ -874,7 +874,7 @@ b {
     border: 1px solid var(--hr-color);
     overflow-y: scroll;       /* Enable vertical scrolling */
     /* Firefox */
-    scrollbar-color: #888 #f1f1f1;
+    scrollbar-color: var(--hr-color) var(--const-bg-color);
     scrollbar-width: thin;
 }
  
@@ -914,6 +914,17 @@ background: #555;
     font-family: 'Nunito Sans', sans-serif;
     letter-spacing: 1.3px;
 }
+
+/* Header of first section. */
+.row-right-column h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1.3px;
+    background-color: var(--hr-color);
+    color: var(--bg-color);
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
 /* Line break in first section. */
 .row-right-column hr {
     border: 1px solid var(--hr-color)
@@ -1071,11 +1082,16 @@ hr {
 }
 
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1150px) { /* Max width needs to be chnaged to match the length of the content to the right of it to avoid full scale headshot being smaller than the right side.*/ 
+@media only screen and (max-width: 1219px) { /* Max width needs to be chnaged to match the length of the content to the right of it to avoid full scale headshot being smaller than the right side.*/ 
     [class*="column"] {
       width: 100%;
       float:none;
       display: block;
+    }
+
+    .row-right-column h3 {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .table {
@@ -1534,3 +1550,23 @@ text-decoration: none;
     width: 100%;  /* Explicitly set to full width */
 }
 
+.svg-container svg {
+    width: 70%;
+    height: 70%;
+    margin: 10px;
+
+}
+.svg-container circle {
+    stroke: var(--text-color-primary);
+    fill-opacity: 0;
+}
+.svg-container path {
+    stroke: var(--text-color-primary);
+}
+.svg-container line {
+    stroke: var(--text-color-primary);
+}
+.svg-container text {
+    fill: var(--text-color-primary);
+    font-family: 'Nunito Sans', sans-serif;
+  }
