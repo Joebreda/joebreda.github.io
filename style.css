@@ -1149,7 +1149,7 @@ hr {
 }
 
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1219px) { /* Max width needs to be chnaged to match the length of the content to the right of it to avoid full scale headshot being smaller than the right side.*/ 
+@media only screen and (max-width: 1249px) { /* Max width needs to be chnaged to match the length of the content to the right of it to avoid full scale headshot being smaller than the right side.*/ 
     [class*="column"] {
       width: 100%;
       float:none;
