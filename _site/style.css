@@ -10,10 +10,45 @@ Sky
 Academia
 --const-bg-color: #FFFBE9;
  --const-text-color: #761818;
+Lazer
+--const-bg-color: #28300f;
+--const-text-color: #73e06d;
 
-
+#bfc3b1;
 */
 :root,
+    :root.cemetery {
+        --const-bg-color: #fffbe9;
+        --const-text-color: #004173;
+        --const-highlight-color: #000dff;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
     :root.academic {
         --const-bg-color: #FFF2D5;
         --const-text-color: #7A0606;
@@ -243,6 +278,38 @@ Academia
 
         --hr-color: var(--const-text-color);
     }
+    :root.crow {
+        --const-bg-color:#000000;
+        --const-text-color: #f5f590;
+        --const-highlight-color: #ffdd00;
+
+        /* Background colors in Dark mode */
+        --bg-color: var(--const-bg-color);
+        --interests-bg-color: var(--const-bg-color);
+        --headshot-bg-color: var(--const-bg-color);
+        --research-bg-color: var(--const-bg-color);
+        --grad1-top-color: var(--const-bg-color);/*rgb(165, 191, 222);*/
+        --grad1-bottom-color: var(--const-text-color);
+        --grad2-top-color: var(--const-text-color);
+        --grad2-bottom-color: var(--const-bg-color);
+        --grad3-top-color: var(--const-bg-color);
+        --grad3-bottom-color: var(--const-text-color);
+        
+        /* text colors in dark mode */
+        --text-color-primary: var(--const-text-color);
+        --text-color-alternate-primary: var(--const-text-color);
+        --text-color-secondary: var(--const-text-color);
+        --text-color-ternary: var(--const-text-color);
+        --text-color-link: var(--const-text-color);
+        --text-color-highlight: var(--const-highlight-color);
+
+        --research-h1-color: var(--const-text-color);
+        --grad1-h1-color: var(--const-text-color);
+        --grad2-h1-color: var(--const-text-color);
+        --grad3-h1-color: var(--const-text-color);
+
+        --hr-color: var(--const-text-color);
+    }
     :root.barcode {
         --const-bg-color:#ffffff;
         --const-text-color: #000000;
@@ -276,9 +343,9 @@ Academia
         --hr-color: var(--const-text-color);
     }
     :root.photosynthesis {
-        --const-bg-color:#264e49;
-        --const-text-color: #6f9b3c;
-        --const-highlight-color: #e3e566;
+        --const-bg-color:#284e26;
+        --const-text-color: #75bb25;
+        --const-highlight-color: #f6fa38;
         --const-text-sec-color: #a5cf61;
 
         /* Background colors in Dark mode */
@@ -568,7 +635,7 @@ Academia
         padding: 25px 16px 25px 16px;  /* Manually centered bottoms in navbar */
         text-decoration: none;
         font-family: 'Nunito Sans', sans-serif;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
     }
 
     .navbar a:hover {
@@ -854,7 +921,7 @@ b {
 .announcement {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
     background-color: var(--text-color-primary);
     color: var(--const-bg-color);
 }
@@ -865,7 +932,7 @@ b {
     text-align: left;
     width: 100%;
     font-family: "Nunito Sans", Helvetica, Arial, sans-serif; /*'Nunito Sans', Noto Sans HK*/
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
     font-weight: 200;
 }
 
@@ -907,13 +974,24 @@ background: #555;
     text-align: left;
     width: 100%;
     font-family: "Nunito Sans", Helvetica, Arial, sans-serif; /*'Nunito Sans', Noto Sans HK*/
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
 }
 /* Header of first section. */
 .row-right-column h1 {
     font-family: 'Nunito Sans', sans-serif;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
 }
+
+/* Header of first section. */
+.row-right-column h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 1.1px;
+    background-color: var(--hr-color);
+    color: var(--bg-color);
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
 /* Line break in first section. */
 .row-right-column hr {
     border: 1px solid var(--hr-color)
@@ -947,7 +1025,7 @@ background: #555;
     margin: 0;
     padding-top:10px; /* these are needed to match the pane to the left. */
     padding-right:20px;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
     top: 0%;
 }
 .second-row-right-column .text-wrapper p { 
@@ -956,7 +1034,7 @@ background: #555;
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 10px;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
 }
 /* Left half of second section is nested in right half but with half width. */
 .second-row-left-column {
@@ -970,7 +1048,7 @@ background: #555;
 /* Div wrapper for publication title, author list, venue. */
 .row .publication-wrapper {
     font-size: 15px;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
@@ -991,7 +1069,7 @@ hr {
 .row .publication-wrapper .author-list {
     color: var(--text-color-ternary);
     margin: 0px;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
 }
 
 /* My name bolded in author list. */
@@ -1071,11 +1149,16 @@ hr {
 }
 
 /* responsive column on phones works for any class ending in column */
-@media only screen and (max-width: 1150px) { /* Max width needs to be chnaged to match the length of the content to the right of it to avoid full scale headshot being smaller than the right side.*/ 
+@media only screen and (max-width: 1219px) { /* Max width needs to be chnaged to match the length of the content to the right of it to avoid full scale headshot being smaller than the right side.*/ 
     [class*="column"] {
       width: 100%;
       float:none;
       display: block;
+    }
+
+    .row-right-column h3 {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .table {
@@ -1359,7 +1442,7 @@ header div p {
     font-family: 'Nunito Sans', sans-serif;
     padding-left: 5px;
     padding-right: 5px;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
     vertical-align: middle;
     display: inline-block;
 }
@@ -1396,7 +1479,7 @@ p {
 
 ol {
     font-family: 'Nunito Sans', sans-serif;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.1px;
     font-weight: 200;
     text-align: left;
 }
